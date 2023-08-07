@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   *{
@@ -8,9 +8,11 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     list-style: none;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
   }
 
   button{
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
   }
 `;

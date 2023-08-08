@@ -1,4 +1,6 @@
 import { Announcement } from "../../components/Announcement";
+import { Footer } from "../../components/Footer";
+import { Navbar } from "../../components/Navbar";
 import {
   Actions,
   Container,
@@ -16,6 +18,8 @@ import {
 
 export const MainPage = () => {
   return (
+    <>
+    <Navbar/>
     <Main>
       <Menu>
         <Logo>{/* <img alt="logo"></img> */}</Logo>
@@ -42,5 +46,7 @@ export const MainPage = () => {
         </MainContent>
       </Container>
     </Main>
+    <Footer/>
+    </>
   );
 };

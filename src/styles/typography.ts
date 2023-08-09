@@ -19,7 +19,7 @@ interface IStyledTitleProps {
         | "Body-1-600"
         | "Body-2-400"
         | "Body-2-500";
-    color: "grey0" | "grey1" | "grey2" | "grey3" | "whiteFixed";
+    color: "grey0" | "grey1" | "grey2" | "grey3" | "whiteFixed" | "brand1";
 }
 
 export const StyledText = styled(BaseText)<IStyledTitleProps>`
@@ -44,6 +44,10 @@ export const StyledText = styled(BaseText)<IStyledTitleProps>`
             case "whiteFixed":
                 return css`
                     color: ${theme.colors.whiteFixed};
+                `;
+             case "brand1":
+                return css`
+                    color: ${theme.colors.brand1};
                 `;
         }
     }};

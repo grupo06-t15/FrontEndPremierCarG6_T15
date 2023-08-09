@@ -1,4 +1,3 @@
-//import { mainTheme } from "./../../styles/theme";
 import { styled } from "styled-components";
 
 export const Announcement = styled.li`
@@ -8,15 +7,6 @@ export const Announcement = styled.li`
   width: 320px;
   gap: 1rem;
   justify-content: space-between;
-
-  h3 {
-    font-size: var(Heading-1-700);
-    color: var(grey1);
-  }
-
-  p {
-    font-size: var(Body-2-400);
-  }
 `;
 
 export const CarImage = styled.div`
@@ -24,10 +14,10 @@ export const CarImage = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: grey;
+  background-color: ${({ theme }) => theme.colors.grey7};
   width: 100%;
   height: 130px;
-  border: 1px solid #ffffff;
+  border: 1px solid ${({ theme }) => theme.colors.whiteFixed};
   position: relative;
 
   img {
@@ -47,8 +37,8 @@ export const Active = styled.span`
   width: 40px;
   vertical-align: middle;
   text-align: center;
-  background-color: blue;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.brand1};
+  color: ${({ theme }) => theme.colors.whiteFixed};
 `;
 
 export const Inactive = styled.span`
@@ -60,7 +50,7 @@ export const Inactive = styled.span`
   vertical-align: middle;
   text-align: center;
   background-color: grey;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.whiteFixed};
 `;
 
 export const Sale = styled.span`
@@ -73,7 +63,7 @@ export const Sale = styled.span`
   text-align: center;
   border-radius: 6px;
   background-color: green;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.whiteFixed};
 `;
 
 export const UserData = styled.div`
@@ -88,8 +78,8 @@ export const UserData = styled.div`
     vertical-align: middle;
     text-align: center;
     border-radius: 50px;
-    background-color: blue;
-    color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.brand1};
+    color: ${({ theme }) => theme.colors.whiteFixed};
     font-size: 14px;
   }
 `;
@@ -110,8 +100,7 @@ export const CarData = styled.div`
       vertical-align: middle;
       text-align: center;
       padding: 0.2rem 0.6rem;
-      background-color: lightblue;
-      color: blue;
+      background-color: ${({ theme }) => theme.colors.brand4};
       border-radius: 6px;
     }
   }

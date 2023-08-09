@@ -1,51 +1,33 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-// import logo from "../../assets/Logo.png";
-import content from "../../assets/Content.svg";
+import FrontAdsImage from "../../assets/FrontAds.png";
 
 export const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const Menu = styled.nav`
-  display: flex;
-  justify-content: space-around;
-  height: 3rem;
-  background-color: var(whiteFixed);
+    display: flex;
+    justify-content: space-around;
+    height: 3rem;
+    background-color: var(whiteFixed);
 `;
 
-export const Logo = styled.div`
-  > img {
+export const FrontAds = styled.div`
     width: 100%;
-    background-image: url();
-  }
+    min-height: 544px;
+
+    background-image: url(${FrontAdsImage});
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 `;
 
-export const Actions = styled.div`
-  display: flex;
+export const Container = styled.div`
+    display: flex;
+
+    gap: 32px;
+
+    margin: 20px;
 `;
-
-export const ListActions = styled.ul`
-  > li {
-  }
-`;
-
-export const Login = styled(Link)``;
-
-export const Register = styled(Link)``;
-
-export const MainImage = styled.header`
-  > img {
-    background-image: url(${content});
-  }
-`;
-
-export const Container = styled.div``;
-
-export const LeftMenu = styled.aside``;
-
-export const MainContent = styled.section``;
-
-export const ListAnnouncement = styled.ul``;

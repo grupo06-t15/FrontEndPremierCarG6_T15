@@ -34,15 +34,6 @@ export const NavContainer = styled.div`
 
         height: 100%;
 
-        p {
-            font-family: Inter;
-            font-weight: 600;
-            size: 16px;
-            line-height: 28px;
-
-            color: #495057;
-        }
-
         button {
             color: #0b0d0d;
             background-color: #fdfdfd;

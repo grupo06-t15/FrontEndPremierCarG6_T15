@@ -17,6 +17,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
         try {
             const response = await api.post("/client", formData);
             setUser(response.data);
+            console.log(user)
         } catch (error) {
             toast.error("Usuario ou senha invalido!");
         }

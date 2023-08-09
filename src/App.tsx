@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import { UserProvider } from "./providers/UserProvider";
 import { RoutesMain } from "./routes";
 import { GlobalStyles } from "./styles/global";
+import { FilterProvider } from "./providers/FilterProvider";
 
 function App() {
     return (
@@ -21,7 +22,9 @@ function App() {
             />
             <GlobalStyles />
             <UserProvider>
-                <RoutesMain />
+                <FilterProvider>
+                    <RoutesMain />
+                </FilterProvider>
             </UserProvider>
         </>
     );

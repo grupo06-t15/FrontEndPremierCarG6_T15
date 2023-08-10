@@ -3,9 +3,9 @@ import { styled } from "styled-components";
 export const StyledNavbar = styled.nav`
   width: 100%;
 
-  background-color: #fdfdfd;
+  background-color: ${({ theme }) => theme.colors.grey10};
 
-  border: solid 1px #dee2e6;
+  border: solid 1px ${({ theme }) => theme.colors.grey6};
 
   height: 80px;
 `;
@@ -30,14 +30,14 @@ export const NavContainer = styled.div`
     gap: 44px;
     padding-left: 44px;
 
-    border-left: solid 1px #dee2e6;
+    border-left: solid 1px ${({ theme }) => theme.colors.grey6};
 
     height: 100%;
 
     button {
-      color: #0b0d0d;
-      background-color: #fdfdfd;
-      border: solid 2px #adb5bd;
+      color: ${({ theme }) => theme.colors.grey0};
+      background-color: ${({ theme }) => theme.colors.grey10};
+      border: solid 2px ${({ theme }) => theme.colors.grey4};
 
       padding: 12px 28px;
 
@@ -47,7 +47,7 @@ export const NavContainer = styled.div`
       font-weight: 600;
       size: 16px;
 
-      color: #495057;
+      color: ${({ theme }) => theme.colors.grey2};
     }
   }
 `;

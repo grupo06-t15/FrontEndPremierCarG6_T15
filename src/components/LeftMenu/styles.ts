@@ -5,6 +5,10 @@ export const Aside = styled.aside`
     flex-direction: column;
     gap: 35px;
 
+    @media(max-width:450px) {
+   display:none; 
+}
+
     button {
         width: 279px;
         height: 48px;
@@ -22,6 +26,7 @@ export const UlContainer = styled.ul`
     li {
         padding-left: 10px;
     }
+
 `;
 
 export const InputContainer = styled.div`

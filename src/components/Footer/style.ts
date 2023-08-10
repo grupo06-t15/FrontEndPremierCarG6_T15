@@ -5,6 +5,11 @@ export const StyledFooter = styled.footer`
   height: 140px;
 
   background-color: #0b0d0d;
+
+  @media(max-width:450px) {
+    height: 310px;
+    
+  }
 `;
 
 export const FooterContainer = styled.div`
@@ -25,4 +30,10 @@ export const FooterContainer = styled.div`
     height: 50px;
     width: 53px;
   }
+
+  @media(max-width:450px) {
+    padding: 42px 0px;
+flex-direction: column;
+    }
+  
 `;

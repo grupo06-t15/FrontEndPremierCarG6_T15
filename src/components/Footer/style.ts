@@ -4,7 +4,7 @@ export const StyledFooter = styled.footer`
   width: 100%;
   height: 140px;
 
-  background-color: #0b0d0d;
+  background-color: ${({ theme }) => theme.colors.grey0};
 `;
 
 export const FooterContainer = styled.div`

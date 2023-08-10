@@ -25,7 +25,7 @@ export const CarImage = styled.div`
   }
 
   &:hover {
-    border: 1px solid blue;
+    border: 1px solid ${({ theme }) => theme.colors.brand1};
   }
 `;
 
@@ -49,7 +49,7 @@ export const Inactive = styled.span`
   width: 40px;
   vertical-align: middle;
   text-align: center;
-  background-color: grey;
+  background-color: ${({ theme }) => theme.colors.grey4};
   color: ${({ theme }) => theme.colors.whiteFixed};
 `;
 
@@ -62,7 +62,7 @@ export const Sale = styled.span`
   vertical-align: middle;
   text-align: center;
   border-radius: 6px;
-  background-color: green;
+  background-color: ${({ theme }) => theme.colors.random7};
   color: ${({ theme }) => theme.colors.whiteFixed};
 `;
 

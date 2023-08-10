@@ -18,7 +18,7 @@ export const AnnouncementCard = () => {
   return (
     <Announcement>
       <CarImage>
-        {/* {isActive ? <Active>Ativo</Active> : <Inactive>Inativo</Inactive>} */}
+        {isActive ? <Active>Ativo</Active> : <Inactive>Inativo</Inactive>}
         {isForSale && <Sale>$</Sale>}
         <img alt="Foto do carro" src="/src/assets/car.svg"></img>
       </CarImage>

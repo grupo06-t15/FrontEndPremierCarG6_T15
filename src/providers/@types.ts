@@ -11,4 +11,6 @@ export interface IUserContextValues {
     loading: boolean;
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
     userLogin: (formData: IUserLoginFormValues) => Promise<void>;
+    user: never[];
+    setUser: (value: React.SetStateAction<never[]>) => void;
 }

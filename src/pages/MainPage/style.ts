@@ -10,7 +10,7 @@ export const Menu = styled.nav`
     display: flex;
     justify-content: space-around;
     height: 3rem;
-    background-color: var(whiteFixed);
+    background-color: ${({ theme }) => theme.colors.whiteFixed};
 `;
 
 export const FrontAds = styled.div`

@@ -1,6 +1,7 @@
 import { StyledText } from "../../styles/typography";
 import { Aside, AsideDiv, InputContainer, UlContainer } from "./styles";
 
+
 export const LeftMenu = () => {
     return (
         <Aside>

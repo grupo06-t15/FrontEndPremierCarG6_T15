@@ -5,30 +5,20 @@ export const Aside = styled.aside`
     flex-direction: column;
     gap: 35px;
 
-
-    button {
-        width: 279px;
-        height: 48px;
-        font-size: 1rem;
-        color: ${({ theme }) => theme.colors.whiteFixed};
-        background-color: ${({ theme }) => theme.colors.brand2};
-        border-radius: 4px;
+    @media (max-width: 450px) {
+        display: none;
     }
-     
-  @media(max-width:450px) {
-  display:none;  
-  }
 `;
 
 export const UlContainer = styled.ul`
     display: flex;
     flex-direction: column;
 
-    li {
+    li,
+    button {
         padding-left: 10px;
         cursor: pointer;
     }
-
 `;
 
 export const InputContainer = styled.div`
@@ -47,8 +37,23 @@ export const InputContainer = styled.div`
 export const AsideDiv = styled.div`
     display: flex;
     justify-content: space-between;
+`;
 
+export const FilterButton = styled.button`
+    width: 279px;
+    height: 48px;
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.whiteFixed};
+    background-color: ${({ theme }) => theme.colors.brand2};
+    border-radius: 4px;
+`;
 
-
-
+export const ModelButton = styled.button`
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-weight: 500px;
+    font-size: 20px;
+    line-height: 25px;
+    color: ${({ theme }) => theme.colors.grey3};
+    background-color: ${({ theme }) => theme.colors.whiteFixed};
+    align-self: baseline;
 `;

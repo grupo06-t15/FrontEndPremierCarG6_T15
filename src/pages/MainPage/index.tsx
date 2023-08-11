@@ -34,12 +34,6 @@ export const MainPage = () => {
           <LeftMenu />
           <AnnouncementList>
             <AnnouncementCard />
-            <AnnouncementCard />
-            <AnnouncementCard />
-            <AnnouncementCard />
-            <AnnouncementCard />
-            <AnnouncementCard />
-            <AnnouncementCard />
           </AnnouncementList>
         </Container>
         

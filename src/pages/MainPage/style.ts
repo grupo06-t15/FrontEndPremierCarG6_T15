@@ -7,14 +7,14 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
 
-    button{
+    /* button{
         width: 279px;
         height: 48px;
         font-size: 1rem;
         color: ${({ theme }) => theme.colors.whiteFixed};
         background-color: ${({ theme }) => theme.colors.brand2};
         border-radius: 4px;
-    }
+    } */
 
     .divButtonMobile{
         display: none;

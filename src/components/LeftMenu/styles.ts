@@ -21,6 +21,7 @@ export const UlContainer = styled.ul`
 
     li {
         padding-left: 10px;
+        cursor: pointer;
     }
 `;
 
@@ -33,6 +34,7 @@ export const InputContainer = styled.div`
 
     input {
         width: 100%;
+        cursor: pointer;
     }
 `;
 

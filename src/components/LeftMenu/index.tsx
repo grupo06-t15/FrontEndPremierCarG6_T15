@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { StyledText } from "../../styles/typography";
-import { Aside, AsideDiv, InputContainer, UlContainer } from "./styles";
+import { Aside, AsideDiv, FilterButton, InputContainer, ModelButton, UlContainer } from "./styles";
 import { FilterContext } from "../../providers/FilterProvider";
 import { v4 as uuidv4 } from "uuid";
 
-
 export const LeftMenu = () => {
-    const { cars, models, names, years, fuels } = useContext(FilterContext);
+    const { cars, models, names, years, fuels, showCars, filterModels } = useContext(FilterContext);
 
     const valor = Array.from(new Set(models.map((model) => model.value)));
     const menorValor = Math.min(...valor);
@@ -19,9 +18,9 @@ export const LeftMenu = () => {
             </StyledText>
             <UlContainer>
                 {cars.map((car) => (
-                    <StyledText tag="li" type="Heading-6-500" color="grey3" key={uuidv4()}>
+                    <ModelButton onClick={() => filterModels(car)} key={uuidv4()}>
                         {car.charAt(0).toUpperCase() + car.substr(1)}
-                    </StyledText>
+                    </ModelButton>
                 ))}
             </UlContainer>
 
@@ -107,7 +106,7 @@ export const LeftMenu = () => {
                     <input id="input__range" type="range" min={menorValor} max={maiorValor} step="1" defaultValue="90"></input>
                 </InputContainer>
             </div>
-            <button>Limpar filtros</button>
+            <FilterButton onClick={() => showCars()}>Limpar filtros</FilterButton>
         </Aside>
     );
 };

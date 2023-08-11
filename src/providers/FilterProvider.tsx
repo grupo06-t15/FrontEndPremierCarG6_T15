@@ -18,6 +18,7 @@ export interface IFilterContextValues {
     setYears: React.Dispatch<React.SetStateAction<string[]>>;
     fuels: string[];
     setFuels: React.Dispatch<React.SetStateAction<string[]>>;
+    filterModels: (input: string) => void;
     showCars: () => Promise<void>;
 }
 
@@ -78,8 +79,50 @@ export const FilterProvider = ({ children }: IChildren) => {
         })();
     }, []);
 
+    const filterModels = async (input: string) => {
+        const filterResponse = await carsApi.get(`/cars?brand=${input}`);
+
+        setCars([input]);
+
+        const nomes: string[] = Array.from(new Set(filterResponse.data.map((model: IModels) => model.name.split(" ")[0])));
+        setNames(nomes);
+
+        const anos: string[] = Array.from(new Set(filterResponse.data.map((model: IModels) => model.year)));
+        setYears(anos);
+
+        const combustivel = Array.from(new Set(filterResponse.data.map((model: IModels) => model.fuel)));
+        const nomeDosCombustiveis: string[] = [];
+        combustivel.map((nomeCombustivel) => {
+            if (nomeCombustivel == 1) {
+                nomeDosCombustiveis.push("Flex");
+            } else if (nomeCombustivel == 2) {
+                nomeDosCombustiveis.push("Híbrido");
+            } else if (nomeCombustivel == 3) {
+                nomeDosCombustiveis.push("Elétrico");
+            }
+        });
+        setFuels(nomeDosCombustiveis);
+    };
+
     return (
-        <FilterContext.Provider value={{ loading, setLoading, cars, setCars, models, setModels, names, setNames, years, setYears, fuels, setFuels, showCars }}>
+        <FilterContext.Provider
+            value={{
+                loading,
+                setLoading,
+                cars,
+                setCars,
+                models,
+                setModels,
+                names,
+                setNames,
+                years,
+                setYears,
+                fuels,
+                setFuels,
+                showCars,
+                filterModels,
+            }}
+        >
             {children}
         </FilterContext.Provider>
     );

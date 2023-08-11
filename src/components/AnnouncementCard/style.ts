@@ -7,6 +7,7 @@ export const Announcement = styled.li`
   width: 320px;
   gap: 1rem;
   justify-content: space-between;
+  cursor: pointer;
 `;
 
 export const CarImage = styled.div`

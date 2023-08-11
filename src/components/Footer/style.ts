@@ -24,5 +24,6 @@ export const FooterContainer = styled.div`
   .FooterButton {
     height: 50px;
     width: 53px;
+    cursor: pointer;
   }
 `;

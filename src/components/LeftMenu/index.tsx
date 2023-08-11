@@ -4,6 +4,7 @@ import { Aside, AsideDiv, InputContainer, UlContainer } from "./styles";
 import { FilterContext } from "../../providers/FilterProvider";
 import { v4 as uuidv4 } from "uuid";
 
+
 export const LeftMenu = () => {
     const { cars, models, names, years, fuels } = useContext(FilterContext);
 

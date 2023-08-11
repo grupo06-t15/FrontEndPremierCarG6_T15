@@ -5,6 +5,7 @@ export const Aside = styled.aside`
     flex-direction: column;
     gap: 35px;
 
+
     button {
         width: 279px;
         height: 48px;
@@ -13,6 +14,10 @@ export const Aside = styled.aside`
         background-color: ${({ theme }) => theme.colors.brand2};
         border-radius: 4px;
     }
+     
+  @media(max-width:450px) {
+  display:none;  
+  }
 `;
 
 export const UlContainer = styled.ul`
@@ -23,6 +28,7 @@ export const UlContainer = styled.ul`
         padding-left: 10px;
         cursor: pointer;
     }
+
 `;
 
 export const InputContainer = styled.div`
@@ -41,4 +47,8 @@ export const InputContainer = styled.div`
 export const AsideDiv = styled.div`
     display: flex;
     justify-content: space-between;
+
+
+
+
 `;

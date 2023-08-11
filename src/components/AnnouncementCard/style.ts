@@ -4,7 +4,7 @@ export const Announcement = styled.li`
   display: flex;
   flex-direction: column;
   height: 380px;
-  width: 320px;
+  min-width: 320px;
   gap: 1rem;
   justify-content: space-between;
   cursor: pointer;

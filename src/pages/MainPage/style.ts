@@ -16,12 +16,10 @@ export const Main = styled.main`
         border-radius: 4px;
     }
 
-    .buttonMobile{
-        display:flex;
+    .divButtonMobile{
         display: none;
-        align-items: center;
         height: 379px;
-        justify-content: center;
+        align-items: center;
         justify-content: space-evenly;
         flex-direction: column;
         
@@ -30,6 +28,17 @@ export const Main = styled.main`
             display:flex;
             
         }
+    }
+    .next{
+        color:${({ theme }) => theme.colors.brand2};
+        background-color:transparent;
+        font-size:2rem;
+        justify-content: center;
+        font-weight: 700;
+    }
+  
+    span{
+        color: ${({ theme }) => theme.colors.grey4};
     }
 
 `;
@@ -50,6 +59,41 @@ export const FrontAds = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    .addsDiv {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+   
+    gap: 16px;
+    max-width: 253px;
+   
+    position: absolute;
+   top: 151px;
+    left: 86px;
+
+h3, p {
+    text-align: center;
+    color: ${({ theme }) => theme.colors.whiteFixed};
+  }
+  p{
+    font-size: 1rem;
+    line-height: 25px;
+  }
+}   
+    
+
+    @media(max-width:450px) {
+    background-image: url(${addsMobile}); 
+    
+    .addsDiv {
+    display: flex;
+   
+  
+    }
+  }      
+
 `;
 
 export const Container = styled.div`
@@ -58,4 +102,19 @@ export const Container = styled.div`
   gap: 32px;
 
     margin: 20px;
+`;
+
+export const AnnouncementList=styled.ul`
+display: flex;
+flex-wrap: wrap;
+gap: 42px;
+
+@media (max-width:450px){
+overflow: auto;
+flex-wrap: nowrap;
+align-items: center;
+gap: 23px;
+}
+
+  
 `;

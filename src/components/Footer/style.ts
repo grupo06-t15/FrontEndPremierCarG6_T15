@@ -5,6 +5,14 @@ export const StyledFooter = styled.footer`
   height: 140px;
 
   background-color: ${({ theme }) => theme.colors.grey0};
+
+  @media(max-width:450px) {
+    display: flex;
+    flex-direction: column;
+    height: 310px;
+   
+    }
+  
 `;
 
 export const FooterContainer = styled.div`
@@ -28,7 +36,7 @@ export const FooterContainer = styled.div`
 
   @media(max-width:450px) {
     padding: 42px 0px;
-flex-direction: column;
+   flex-direction: column;
     }
   
 `;

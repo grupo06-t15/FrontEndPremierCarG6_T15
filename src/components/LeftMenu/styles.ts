@@ -5,9 +5,6 @@ export const Aside = styled.aside`
     flex-direction: column;
     gap: 35px;
 
-    @media(max-width:450px) {
-   display:none; 
-}
 
     button {
         width: 279px;
@@ -17,6 +14,10 @@ export const Aside = styled.aside`
         background-color: ${({ theme }) => theme.colors.brand2};
         border-radius: 4px;
     }
+     
+  @media(max-width:450px) {
+  display:none;  
+  }
 `;
 
 export const UlContainer = styled.ul`
@@ -44,4 +45,8 @@ export const InputContainer = styled.div`
 export const AsideDiv = styled.div`
     display: flex;
     justify-content: space-between;
+
+
+
+
 `;

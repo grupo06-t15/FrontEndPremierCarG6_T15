@@ -1,5 +1,5 @@
 import { NavContainer, StyledNavbar } from "./style";
-import NavbarLogo from "../../assets/NavbarLogo.png";
+import NavbarLogo from "../../assets/premiercarnavbar.png";
 import { StyledText } from "../../styles/typography";
 
 export const Navbar = () => {

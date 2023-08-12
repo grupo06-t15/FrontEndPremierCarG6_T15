@@ -25,6 +25,18 @@ export const CarImage = styled.div`
     height: 110px;
   }
 
+  span {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    line-height: 20px;
+    padding: 0 0.4rem;
+    vertical-align: middle;
+    text-align: center;
+    background-color: ${({ theme }) => theme.colors.brand1};
+    color: ${({ theme }) => theme.colors.whiteFixed};
+  }
+
   &:hover {
     border: 1px solid ${({ theme }) => theme.colors.brand1};
   }
@@ -35,7 +47,7 @@ export const Active = styled.span`
   top: 10px;
   left: 10px;
   line-height: 20px;
-  width: 40px;
+  padding: 0 0.4rem;
   vertical-align: middle;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.brand1};
@@ -47,7 +59,7 @@ export const Inactive = styled.span`
   top: 10px;
   left: 10px;
   line-height: 20px;
-  width: 40px;
+  padding: 0 0.4rem;
   vertical-align: middle;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.grey4};
@@ -92,8 +104,11 @@ export const CarData = styled.div`
 
   div {
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     align-items: center;
+    padding: 0.2rem 0.6rem;
+    //background-color: ${({ theme }) => theme.colors.brand4};
+    border-radius: 6px;
     gap: 0.4rem;
 
     span {
@@ -102,6 +117,7 @@ export const CarData = styled.div`
       text-align: center;
       padding: 0.2rem 0.6rem;
       background-color: ${({ theme }) => theme.colors.brand4};
+      color: ${({ theme }) => theme.colors.brand1};
       border-radius: 6px;
     }
   }

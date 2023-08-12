@@ -20,8 +20,7 @@ export const NavContainer = styled.div`
   height: 100%;
 
   img {
-    height: 26.34px;
-    width: 153.02px;
+    width: 240px;
   }
 
   div {

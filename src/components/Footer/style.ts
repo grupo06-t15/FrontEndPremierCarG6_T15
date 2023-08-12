@@ -6,13 +6,11 @@ export const StyledFooter = styled.footer`
 
   background-color: ${({ theme }) => theme.colors.grey0};
 
-  @media(max-width:450px) {
+  @media (max-width: 450px) {
     display: flex;
     flex-direction: column;
     height: 310px;
-   
-    }
-  
+  }
 `;
 
 export const FooterContainer = styled.div`
@@ -25,8 +23,7 @@ export const FooterContainer = styled.div`
   height: 100%;
 
   .FooterLogo {
-    height: 26.34px;
-    width: 153.02px;
+    width: 156px;
   }
 
   .FooterButton {
@@ -35,9 +32,8 @@ export const FooterContainer = styled.div`
     cursor: pointer;
   }
 
-  @media(max-width:450px) {
+  @media (max-width: 450px) {
     padding: 42px 0px;
-   flex-direction: column;
-    }
-  
+    flex-direction: column;
+  }
 `;

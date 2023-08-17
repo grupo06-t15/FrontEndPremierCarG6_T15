@@ -6,7 +6,7 @@ export const StyledFooter = styled.footer`
 
   background-color: ${({ theme }) => theme.colors.grey0};
 
-  @media (max-width: 450px) {
+  @media (max-width: 769px) {
     display: flex;
     flex-direction: column;
     height: 310px;
@@ -32,7 +32,7 @@ export const FooterContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 769px) {
     padding: 42px 0px;
     flex-direction: column;
   }

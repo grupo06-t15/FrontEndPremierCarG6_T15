@@ -5,7 +5,7 @@ export const Aside = styled.aside`
     flex-direction: column;
     gap: 35px;
 
-    @media (max-width: 450px) {
+    @media (max-width: 769px) {
         display: none;
     }
 `;

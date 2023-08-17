@@ -24,7 +24,7 @@ export const Main = styled.main`
         flex-direction: column;
         
 
-        @media(max-width:450px) {
+        @media(max-width:769px) {
             display:flex;
             
         }
@@ -70,21 +70,24 @@ export const FrontAds = styled.div`
     max-width: 253px;
    
     position: absolute;
-   top: 151px;
-    left: 86px;
+    top: 162px;
+    left: 246px;
 
 h3, p {
     text-align: center;
     color: ${({ theme }) => theme.colors.whiteFixed};
   }
   p{
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 25px;
+  }
+  h3{
+    font-size: 1.7rem;
   }
 }   
     
 
-    @media(max-width:450px) {
+    @media(max-width:769px) {
     background-image: url(${addsMobile}); 
     
     .addsDiv {
@@ -109,7 +112,7 @@ display: flex;
 flex-wrap: wrap;
 gap: 42px;
 
-@media (max-width:450px){
+@media (max-width:769px){
 overflow: auto;
 flex-wrap: nowrap;
 align-items: center;

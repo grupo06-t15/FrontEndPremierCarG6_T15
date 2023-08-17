@@ -67,22 +67,21 @@ export const FrontAds = styled.div`
     align-items: center;
    
     gap: 16px;
-    max-width: 253px;
    
     position: absolute;
-    top: 162px;
-    left: 246px;
+    top: 123px;
 
 h3, p {
     text-align: center;
-    color: ${({ theme }) => theme.colors.whiteFixed};
+    width: 100%;
+    color: ${({ theme }) => theme.colors.grey10};
   }
   p{
     font-size: 1.3rem;
     line-height: 25px;
   }
   h3{
-    font-size: 1.7rem;
+    font-size: 1.87rem;
   }
 }   
     

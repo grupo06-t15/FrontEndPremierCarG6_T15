@@ -28,9 +28,9 @@ export const MainPage = () => {
             <h3>Motors Shop </h3>
             <p>
               {' '}
-              A melhor plataforma
+              A melhor plataforma de
               <br />
-              de anúncios de carros do país
+               anúncios de carros do país
             </p>
           </div>
         </FrontAds>

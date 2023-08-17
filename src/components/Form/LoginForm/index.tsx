@@ -4,8 +4,8 @@ import { LoginData, loginSchema } from "./loginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../Input";
 
-import { UserContext } from "../../providers/UserProvider";
-import { StyledForm } from "./styled";
+import { UserContext } from "../../../providers/UserProvider";
+import { StyledForm } from "../styled";
 
 export const LoginForm = () => {
     const {

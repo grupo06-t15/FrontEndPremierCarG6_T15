@@ -1,32 +1,67 @@
 import { createContext, useState } from "react";
 import {
-  IDefaultProvidersProps,
-  IUserContextValues,
-  IUserLoginFormValues,
+    IDefaultProvidersProps,
+    IUserContextValues,
+    IUserLoginFormValues,
+    IUserRegisterFormValues,
 } from "./@types";
+import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
 
 export const UserContext = createContext({} as IUserContextValues);
 
 export const UserProvider = ({ children }: IDefaultProvidersProps) => {
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState([]);
 
-  const userLogin = async (formData: IUserLoginFormValues) => {
-    try {
-      const response = await api.post("/client", formData);
-      setUser(response.data);
-    } catch (error) {
-      toast.error("Usuario ou senha invalido!");
-    }
-  };
+    const navigate = useNavigate();
 
-  return (
-    <UserContext.Provider
-      value={{ loading, setLoading, userLogin, user, setUser }}
-    >
-      {children}
-    </UserContext.Provider>
-  );
+    const userLogin = async (formData: IUserLoginFormValues) => {
+        try {
+            const response = await api.post("/session", formData);
+            setUser(response.data);
+        } catch (error) {
+            toast.error("Usuario ou senha invalido!");
+        }
+    };
+
+    const userRegister = async (formData: IUserRegisterFormValues) => {
+        try {
+            setLoading(true);
+            const response = await api.post("/users", formData);
+            setUser(response.data);
+            toast.success(`Usuario ${response.data.name}, cadastrado!!`);
+            navigate("/");
+        } catch (error: any) {
+            const errorMessage: string =
+                error.response?.data?.message ??
+                toast.error("Usuario não cadastrado!");
+            toast.error(`${errorMessage}!`);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const userLogout = () => {
+        setUser([]);
+        localStorage.removeItem("@TOKEN");
+        navigate("/");
+    };
+
+    return (
+        <UserContext.Provider
+            value={{
+                loading,
+                setLoading,
+                userLogin,
+                user,
+                setUser,
+                userRegister,
+                userLogout,
+            }}
+        >
+            {children}
+        </UserContext.Provider>
+    );
 };

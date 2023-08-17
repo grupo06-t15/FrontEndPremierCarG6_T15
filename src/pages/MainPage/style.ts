@@ -19,6 +19,7 @@ export const Main = styled.main`
     .divButtonMobile{
         display: none;
         height: 379px;
+        width: 100%;
         align-items: center;
         justify-content: space-evenly;
         flex-direction: column;

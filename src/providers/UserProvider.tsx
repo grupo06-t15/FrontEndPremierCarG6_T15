@@ -20,7 +20,13 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     const userLogin = async (formData: IUserLoginFormValues) => {
         try {
             const response = await api.post("/session", formData);
+            const { token } = response.data;
+            localStorage.setItem("@TOKEN", token);
+            api.defaults.headers.common.Authorization = `Bearer ${token}`;
+            console.log(token)
             setUser(response.data);
+            navigate("/");
+            toast.success(`Bem Vindo ! `);
         } catch (error) {
             toast.error("Usuario ou senha invalido!");
         }

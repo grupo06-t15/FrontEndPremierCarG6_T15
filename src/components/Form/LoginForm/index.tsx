@@ -31,8 +31,8 @@ export const LoginForm = () => {
                 </StyledText>
                 <FormContainer>
                     <FieldsetContainer>
-                        <Input label={"Email"} placeholder="Digitar email" type="email" error={errors.email} register={register("email")} />
-                        <Input label={"Senha"} placeholder="Digitar senha" type="password" error={errors.password} register={register("password")} />
+                        <Input label="Email" placeholder="Digitar email" type="email" error={errors.email} register={register("email")} />
+                        <Input label="Senha" placeholder="Digitar senha" type="password" error={errors.password} register={register("password")} />
                         <StyledText className="forgotPassword" tag="p" type="Body-2-500" color="grey2">
                             Esqueci minha senha
                         </StyledText>

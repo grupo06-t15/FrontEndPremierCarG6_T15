@@ -8,6 +8,9 @@ export const StyledForm = styled.form`
     flex-direction: column;
     gap: 32px;
 
+    width: -webkit-fill-available;
+    max-width: 412px;
+
     margin: 52px 16px;
 
     background-color: ${({ theme }) => theme.colors.grey10};

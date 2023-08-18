@@ -1,73 +1,18 @@
 import styled from "styled-components";
 
+export const RegisterPageContainer = styled.div`
+    footer {
+        position: relative;
+    }
+`;
 export const StyledRegisterPage = styled.main`
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    align-items: center;
 
-    .formBox {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        max-width: 410px;
-        
-        header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            justify-content: space-between;
 
-            a {
-                font-size: 0.875rem;
-                font-weight: 600;
-
-                white-space: nowrap;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
     
-    .flexGrid {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 50px;
+    padding: 132px 16px 52px 16px;
 
-        .left,
-        .right {
-            width: 100%;
-        }
-
-        img {
-            max-width: 500px;
-        }
-
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 0 20px;
-            height: 60px;
-            :hover {
-                opacity: 0.5;
-            }
-        }
-        
-
-        @media (max-width: 750px) {
-            .left {
-                display: none;
-            }
-        }
-    }
+    background-color: ${({ theme }) => theme.colors.grey6};
 `;

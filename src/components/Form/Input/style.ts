@@ -9,7 +9,7 @@ export const StyledFieldset = styled.fieldset`
 `;
 export const StyledLabel = styled.label`
     font-family: ${({ theme }) => theme.fonts.secondary};
-    font-size: 500px;
+    font-weight: 500;
     font-size: 14px;
     line-height: 16.94px;
     color: ${({ theme }) => theme.colors.grey2};

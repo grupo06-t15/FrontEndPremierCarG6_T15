@@ -7,7 +7,13 @@ export const StyledFieldset = styled.fieldset`
     flex-direction: column;
     gap: 8px;
 `;
-
+export const StyledLabel = styled.label`
+    font-family: ${({ theme }) => theme.fonts.secondary};
+    font-size: 500px;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: ${({ theme }) => theme.colors.grey2};
+`;
 
 export const StyledTextField = styled(TextField)`
     width: 100%;

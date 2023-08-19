@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import { StyledContainer, StyledGridBox } from "../../styles/grid";
 import { StyledRegisterPage } from "./style";
 import { RegisterForm } from "../../components/Form/RegisterForm";
-import { Footer } from "../../components/Footer";
+// import { Footer } from "../../components/Footer";
 
 export const RegisterPage = () => (
     <StyledRegisterPage>
@@ -14,11 +13,10 @@ export const RegisterPage = () => (
                         <h3>informações pessoais</h3>
                         <RegisterForm />
                         <p>Crie sua conta gratis!!</p>
-                        <Link to="/login">Finalizar cadastro</Link>
                     </StyledGridBox>
                 </div>
             </div>
-        <Footer/>
         </StyledContainer>
+        {/* <Footer /> */}
     </StyledRegisterPage>
 );

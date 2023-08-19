@@ -17,6 +17,14 @@ export interface IUserRegisterFormValues {
     accountType: string;
     password: string;
     confirmPassword: string;
+    address: {
+        cep: string;
+        state: string;
+        city: string;
+        street: string;
+        number: string;
+        complement: string;
+    };
 }
 
 export interface IUserContextValues {

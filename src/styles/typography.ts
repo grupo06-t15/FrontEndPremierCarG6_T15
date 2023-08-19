@@ -73,6 +73,7 @@ export const StyledText = styled(BaseText)<IStyledTitleProps>`
         }
     }};
 
+<<<<<<< HEAD
     ${({ type }) => {
         switch (type) {
             case "Heading-1-700":
@@ -219,4 +220,152 @@ export const StyledText = styled(BaseText)<IStyledTitleProps>`
                 `;
         }
     }}
+=======
+  ${({ type }) => {
+    switch (type) {
+      case "Heading-1-700":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 700;
+          font-size: 44px;
+          line-height: 56px;
+        `;
+    }
+    switch (type) {
+      case "Heading-2-600":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 600;
+          font-size: 36px;
+          line-height: 45px;
+        `;
+    }
+    switch (type) {
+      case "Heading-3-600":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 600;
+          font-size: 32px;
+          line-height: 40px;
+        `;
+    }
+    switch (type) {
+      case "Heading-3-500":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 500;
+          font-size: 32px;
+          line-height: 40px;
+        `;
+    }
+    switch (type) {
+      case "Heading-4-600":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 35px;
+        `;
+    }
+    switch (type) {
+      case "Heading-4-500":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 500;
+          font-size: 28px;
+          line-height: 35px;
+        `;
+    }
+    switch (type) {
+      case "Heading-5-600":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 30px;
+        `;
+    }
+    switch (type) {
+      case "Heading-5-500":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 30px;
+        `;
+    }
+    switch (type) {
+      case "Heading-6-600":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 25px;
+        `;
+    }
+    switch (type) {
+      case "Heading-6-500":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 25px;
+        `;
+    }
+    switch (type) {
+      case "Heading-7-600":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 20px;
+        `;
+    }
+    switch (type) {
+      case "Heading-7-500":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.primary};
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+        `;
+    }
+    switch (type) {
+      case "Body-1-600":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.secondary};
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 28px;
+        `;
+    }
+    switch (type) {
+      case "Body-1-400":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.secondary};
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 28px;
+        `;
+    }
+    switch (type) {
+      case "Body-2-500":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.secondary};
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 24px;
+        `;
+    }
+    switch (type) {
+      case "Body-2-400":
+        return css`
+          font-family: ${({ theme }) => theme.fonts.secondary};
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 24px;
+        `;
+    }
+  }}
+>>>>>>> 374dc1bdb74481f85478a4e9cefad13dd2011cdd
 `;

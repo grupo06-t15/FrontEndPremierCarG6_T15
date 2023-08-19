@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useContext, useState } from "react";
 import { StyledForm } from "../styled";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -5,6 +6,18 @@ import { TRegisterData, registerSchema } from "./registerSchema";
 import { Input } from "../Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserContext } from "../../../providers/UserProvider";
+=======
+import { useContext } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Input } from "../Input";
+import { UserContext } from "../../../providers/UserProvider";
+import { EnterButton, StyledForm } from "../styled";
+import { IUserRegisterFormValues } from "../../../providers/@types";
+import { registerSchema } from "./registerSchema";
+import { MenuItem, Select } from "@mui/material";
+import { StyledText } from "../../../styles/typography";
+>>>>>>> 374dc1bdb74481f85478a4e9cefad13dd2011cdd
 
 export const RegisterForm = () => {
     const {

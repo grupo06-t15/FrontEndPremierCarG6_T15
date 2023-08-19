@@ -18,7 +18,13 @@ export const StyledLoginPage = styled.main`
 
     @media (max-width: 769px) {
         padding-bottom: 310px;
+
+        @media (max-height: 970px) {
+            padding-bottom: 0px;
+        }
+    }
+
+    @media (max-height: 800px) {
+        padding-bottom: 0px;
     }
 `;
-
-export const StyledLoginForm = styled.div``;

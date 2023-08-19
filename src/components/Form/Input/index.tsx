@@ -15,7 +15,8 @@ export const Input = ({
     label,
     type,
     error,
-    register,value
+    register,
+    value,
 }: IInputProps) => {
     return (
         <StyledFieldset>

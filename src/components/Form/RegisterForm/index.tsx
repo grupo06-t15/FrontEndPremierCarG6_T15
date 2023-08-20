@@ -27,42 +27,42 @@ export const RegisterForm = () => {
     return (
         <StyledForm onSubmit={handleSubmit(submit)}>
             <Input
-                label={"Nome"}
+                label="Nome"
                 type="text"
                 placeholder="Ex: Carlos Junior"
                 error={errors.name}
                 register={register("name")}
             />
             <Input
-                label={"Email"}
+                label="Email"
                 type="email"
                 placeholder="Ex: carlosjunior@gmail.com"
                 error={errors.email}
                 register={register("email")}
             />
             <Input
-                label={"cpf"}
+                label="cpf"
                 type="text"
                 placeholder="000.000.000-00"
                 error={errors.cpf}
                 register={register("cpf")}
             />
             <Input
-                label={"Telefone"}
+                label="Telefone"
                 type="text"
                 placeholder="(DDD) 90000-0000"
                 error={errors.cellPhone}
                 register={register("cellPhone")}
             />
             <Input
-                label={"Data de nascimento"}
+                label="Data de nascimento"
                 type="text"
                 placeholder="00/00/0000"
                 error={errors.birthDate}
                 register={register("birthDate")}
             />
             <Input
-                label={"Descrição"}
+                label="Descrição"
                 type="text"
                 placeholder="Digitar descrição"
                 error={errors.description}
@@ -72,7 +72,7 @@ export const RegisterForm = () => {
             <h2>Informações de endereço</h2>
 
             <Input
-                label={"CEP"}
+                label="CEP"
                 type="text"
                 placeholder="00000.000"
                 error={errors.description}
@@ -80,14 +80,14 @@ export const RegisterForm = () => {
             />
             <div>
                 <Input
-                    label={"Estado"}
+                    label="Estado"
                     type="text"
                     placeholder="Digitar estado"
                     error={errors.description}
                     register={register("address.state")}
                 />
                 <Input
-                    label={"Cidade"}
+                    label="Cidade"
                     type="text"
                     placeholder="Digitar cidade"
                     error={errors.description}
@@ -95,7 +95,7 @@ export const RegisterForm = () => {
                 />
             </div>
             <Input
-                label={"Rua"}
+                label="Rua"
                 type="text"
                 placeholder="Digitar rua"
                 error={errors.description}
@@ -103,14 +103,14 @@ export const RegisterForm = () => {
             />
             <div>
                 <Input
-                    label={"Número"}
+                    label="Número"
                     type="text"
                     placeholder="Digitar número"
                     error={errors.description}
                     register={register("address.number")}
                 />
                 <Input
-                    label={"Complemento"}
+                    label="Complemento"
                     type="text"
                     placeholder="Ex: apart 306"
                     error={errors.description}
@@ -140,14 +140,14 @@ export const RegisterForm = () => {
             />
             {/* {console.log(selectedAccountType)} */}
             <Input
-                label={"Senha"}
+                label="Senha"
                 type="password"
                 placeholder="Digitar senha"
                 error={errors.password}
                 register={register("password")}
             />
             <Input
-                label={"Confirmar Senha"}
+                label="Confirmar Senha"
                 type="password"
                 placeholder="Digitar senha"
                 error={errors.password}

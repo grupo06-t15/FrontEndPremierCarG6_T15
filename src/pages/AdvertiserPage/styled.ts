@@ -5,6 +5,10 @@ export const MainContainer = styled.main`
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.grey8};
+
+  footer {
+    position: relative;
+  }
 `;
 
 export const PurpleBox = styled.div`
@@ -15,14 +19,18 @@ export const PurpleBox = styled.div`
 
 export const AnnounceList = styled.ul`
   width: 90%;
+  max-height: 23.75rem;
+  overflow-x: auto;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
-  margin-bottom: 20rem;
+  margin-bottom: 6rem;
+  gap: 1.5rem;
 
   @media (min-width: 900px) {
-    flex-direction: row;
-    justify-content: space-between
+    min-height: 30rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 `;

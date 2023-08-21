@@ -28,7 +28,7 @@ export const AdvertiseCard = ({ announce }: AdvertiseCardProps) => {
       </AnnouceDescription>
       <PriceContainer>
         <div>
-          <span>{announce.mileage}</span>
+          <span>{announce.mileage + ' KM'}</span>
           <span>{announce.year}</span>
         </div>
         <p>R${` ${announce.price}`}</p>

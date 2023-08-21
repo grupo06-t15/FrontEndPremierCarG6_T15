@@ -6,7 +6,7 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.whiteFixed};
-  transform: translateY(-15rem);
+  transform: translateY(-10rem);
   border-radius: 4px;
   padding: 2rem 1.5rem;
 `;

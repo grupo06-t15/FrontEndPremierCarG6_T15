@@ -36,8 +36,9 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
         try {
             setLoading(true);
             const response = await api.post("/users", formData);
+            console.log("testei funCao register")
             setUser(response.data);
-            toast.success(`Usuario ${response.data.name}, cadastrado!!`);
+            toast.success(`Usuario cadastrado!!`);
             navigate("/");
         } catch (error: any) {
             const errorMessage: string =

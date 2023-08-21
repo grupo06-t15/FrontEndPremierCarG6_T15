@@ -1,18 +1,33 @@
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
-import { StyledTextField } from "./style";
+import { StyledFieldset, StyledLabel, StyledTextField } from "./style";
 
 interface IInputProps {
-    label: string;
-    type: "password" | "text" | "email";
+    label?: string;
+    placeholder?: string;
+    value?: string;
+    type: "password" | "text" | "email" | "hidden";
     register: UseFormRegisterReturn<string>;
     error?: FieldError;
 }
 
-export const Input = ({ label, type, error, register }: IInputProps) => {
+export const Input = ({
+    placeholder,
+    label,
+    type,
+    error,
+    register,
+    value,
+}: IInputProps) => {
     return (
-        <fieldset>
-            <StyledTextField label={label} type={type} {...register} />
+        <StyledFieldset>
+            <StyledLabel>{label}</StyledLabel>
+            <StyledTextField
+                placeholder={placeholder}
+                value={value}
+                type={type}
+                {...register}
+            />
             {error ? <p>{error.message}</p> : null}
-        </fieldset>
+        </StyledFieldset>
     );
 };

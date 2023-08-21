@@ -1,16 +1,11 @@
 import { z } from "zod";
 
-enum AccountType {
-    COMPRADOR = "comprador",
-    ANUNCIANTE = "anunciante",
-}
-
 export const registerSchema = z
     .object({
         name: z
             .string()
             .min(3, "O nome precisa ter pelo menos 3 caracteres!")
-            .max(10, "Numero máximo de caracteres atingido!")
+            .max(120, "Numero máximo de caracteres atingido!")
             .nonempty("Nome obrigatório!"),
         email: z
             .string()
@@ -21,7 +16,15 @@ export const registerSchema = z
         cellPhone: z.string().nonempty(),
         birthDate: z.string(),
         description: z.string(),
-        accountType: z.nativeEnum(AccountType),
+        accountType: z.string(),
+        address: z.object({
+            cep: z.string(),
+            state: z.string(),
+            city: z.string(),
+            street: z.string(),
+            number: z.string(),
+            complement: z.string(),
+        }),
         password: z
             .string()
             .min(8, "Sua senha deve conter no minimo 8 caracteres")
@@ -35,3 +38,5 @@ export const registerSchema = z
         message: "Password doesn't match",
         path: ["confirmPassword"],
     });
+
+export type TRegisterData = z.infer<typeof registerSchema>;

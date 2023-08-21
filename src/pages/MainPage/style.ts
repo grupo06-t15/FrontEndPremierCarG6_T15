@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FrontAdsImage from "../../assets/FrontAds.png";
-import addsMobile from "../../assets/addsMobile.png"
+import addsMobile from "../../assets/addsMobile.png";
 
 
 export const Main = styled.main`

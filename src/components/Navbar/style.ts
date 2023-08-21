@@ -34,6 +34,12 @@ export const NavContainer = styled.div`
     font-size: 18px;
   }
 
+  @media (max-width: 320px) {
+    img {
+      width: 100%;
+    }
+  }
+
   @media (min-width: 769px) {
     button {
       display: none;

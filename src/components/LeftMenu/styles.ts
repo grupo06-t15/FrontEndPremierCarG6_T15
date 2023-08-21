@@ -50,7 +50,7 @@ export const FilterButton = styled.button`
 
 export const ModelButton = styled.button`
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-weight: 500px;
+    font-weight: 500;
     font-size: 20px;
     line-height: 25px;
     color: ${({ theme }) => theme.colors.grey3};

@@ -1,73 +1,61 @@
 import styled from "styled-components";
 
-export const StyledRegisterPage = styled.main`
+export const RegisterPageContainer = styled.div`
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+`;
+
+export const StyledTypeButtonsAccount = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    justify-content: space-between;
+    gap: 10px;
 
-    .formBox {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        max-width: 410px;
-        
-        header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            justify-content: space-between;
-
-            a {
-                font-size: 0.875rem;
-                font-weight: 600;
-
-                white-space: nowrap;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
-    
-    .flexGrid {
+    .radio-label {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 50px;
+        justify-content: center;
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+        cursor: pointer;
+        width: 100%;
+    }
 
-        .left,
-        .right {
-            width: 100%;
-        }
+    .radio-label input[type="radio"] {
+        appearance: none;
+    }
 
-        img {
-            max-width: 500px;
-        }
+    .radio-label.selected {
+        background-color: ${({ theme }) => theme.colors.brand2};
+        color: ${({ theme }) => theme.colors.whiteFixed};
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+`;
 
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 0 20px;
-            height: 60px;
-            :hover {
-                opacity: 0.5;
-            }
-        }
-        
+export const StyledRegisterPage = styled.main`
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        @media (max-width: 750px) {
-            .left {
-                display: none;
-            }
+    height: 100%;
+
+    padding-bottom: 140px;
+    padding-top: 80px;
+
+    background-color: ${({ theme }) => theme.colors.grey6};
+
+    @media (max-width: 769px) {
+        padding-bottom: 310px;
+
+        @media (max-height: 970px) {
+            padding-bottom: 0px;
         }
+    }
+
+    @media (max-height: 800px) {
+        padding-bottom: 0px;
     }
 `;

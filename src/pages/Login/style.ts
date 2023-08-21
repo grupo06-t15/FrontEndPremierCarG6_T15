@@ -1,58 +1,30 @@
 import styled from "styled-components";
 
+export const LoginPageContainer = styled.div`
+    height: 100vh;
+`;
+
 export const StyledLoginPage = styled.main`
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    align-items: center;
 
-    .flexGrid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 50px;
+    height: 100%;
 
-        .formBox {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            gap: 20px;
+    padding-bottom: 140px;
+    padding-top: 80px;
 
-            form,
-            button,
-            a {
-                width: 100%;
-            }
-            p {
-                max-width: 410px;
-            }
+    background-color: ${({ theme }) => theme.colors.grey6};
+
+    @media (max-width: 769px) {
+        padding-bottom: 310px;
+
+        @media (max-height: 970px) {
+            padding-bottom: 0px;
         }
+    }
 
-        button,
-        a {
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 0 20px;
-            height: 60px;
-            :hover {
-                opacity: 0.5;
-            }
-        }
-
-        @media (max-width: 750px) {
-            flex-direction: column-reverse;
-            .ballsImage {
-                display: none;
-            }
-        }
+    @media (max-height: 800px) {
+        padding-bottom: 0px;
     }
 `;

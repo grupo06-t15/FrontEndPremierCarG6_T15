@@ -27,6 +27,14 @@ export const NavContainer = styled.div`
         width: 240px;
     }
 
+  @media (max-width: 320px) {
+    img {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 769px) {
+
     button {
         position: relative;
         display: block;

@@ -1,8 +1,8 @@
-import { Route, Routes } from 'react-router-dom';
-import { AdvertiserPage } from '../pages/AdvertiserPage';
-import { LoginPage } from '../pages/Login';
-import { MainPage } from '../pages/MainPage';
-import { RegisterPage } from '../pages/Register';
+import { Route, Routes } from "react-router-dom";
+import { AdvertiserPage } from "../pages/AdvertiserPage";
+import { LoginPage } from "../pages/Login";
+import { MainPage } from "../pages/MainPage";
+import { RegisterPage } from "../pages/Register";
 
 export const RoutesMain = () => {
   return (

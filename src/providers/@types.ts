@@ -8,24 +8,23 @@ export interface IUserLoginFormValues {
 }
 
 export interface IUserRegisterFormValues {
-
-    name: string;
-    email: string;
-    cpf: string;
-    cellPhone: string;
-    birthDate: string;
-    description: string;
-    accountType: string;
-    password: string;
-    confirmPassword: string;
-    address: {
-        cep: string;
-        state: string;
-        city: string;
-        street: string;
-        number: string;
-        complement: string;
-    };
+  name: string;
+  email: string;
+  cpf: string;
+  cellPhone: string;
+  birthDate: string;
+  description: string;
+  accountType: string;
+  password: string;
+  confirmPassword: string;
+  address: {
+    cep: string;
+    state: string;
+    city: string;
+    street: string;
+    number: string;
+    complement: string;
+  };
 }
 
 export interface IUserContextValues {
@@ -59,4 +58,28 @@ export interface IAnnounce {
   createdAt: string;
   updatedAt: string;
   images: ICarImages[];
+}
+
+export interface IAddress {
+  cep: string;
+  state: string;
+  city: string;
+  street: string;
+  number: string;
+  complement: string;
+}
+
+export interface IUserData {
+  id: string;
+  name: string;
+  email: string;
+  cpf: string;
+  cellPhone: string;
+  birthDate: string;
+  description: string;
+  accountType: string;
+  registerDate: string;
+  updatedAt: string;
+  address: IAddress;
+  announcements: IAnnounce[];
 }

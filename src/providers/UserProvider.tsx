@@ -14,13 +14,15 @@ import {
   TJwtDecoded,
 } from './@types';
 
+
 export const UserContext = createContext({} as IUserContextValues);
 
 export const UserProvider = ({ children }: IDefaultProvidersProps) => {
+
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<IUserData>({} as IUserData);
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
   const retrieveUser = async () => {
     try {
@@ -99,4 +101,5 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
       {children}
     </UserContext.Provider>
   );
+
 };

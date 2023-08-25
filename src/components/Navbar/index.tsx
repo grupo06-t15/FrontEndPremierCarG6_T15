@@ -14,14 +14,15 @@ export const Navbar = () => {
   const [userData, setUserData] = useState<IUserRegisterFormValues | null>();
   const { setUser } = useContext(UserContext);
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
   useEffect(() => {
     async function loadUserData() {
       const token = localStorage.getItem('@TOKEN');
 
-      if (token) {
-        const decoded: string = jwt_decode(token!);
+
+            if (token) {
+                const decoded: string = jwt_decode(token!);
 
         const foundUser = await api.get(`/users/${decoded.sub!}`, {
           headers: {

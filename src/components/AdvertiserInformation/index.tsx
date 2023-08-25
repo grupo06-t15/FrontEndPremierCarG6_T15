@@ -1,13 +1,14 @@
 import { useContext } from 'react';
 import { IUserData } from '../../providers/@types';
 import { ModalContext } from '../../providers/ModalProvider';
+
 import {
-  AvatarContainer,
-  CreateAnnounceBtn,
-  Description,
-  InfoContainer,
-  NameContainer,
-} from './styled';
+    AvatarContainer,
+    CreateAnnounceBtn,
+    Description,
+    InfoContainer,
+    NameContainer,
+} from "./styled";
 
 interface IAdvertiseInfoProps {
   user: IUserData;
@@ -34,4 +35,5 @@ export const AdvertiserInformation = ({ user }: IAdvertiseInfoProps) => {
       )}
     </InfoContainer>
   );
+
 };

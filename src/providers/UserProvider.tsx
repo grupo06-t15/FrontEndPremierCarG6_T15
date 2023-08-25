@@ -1,52 +1,76 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
+import { isAxiosError } from 'axios';
+import jwt_decode from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { api } from '../services/api';
 import {
   IDefaultProvidersProps,
   IUserContextValues,
+  IUserData,
   IUserLoginFormValues,
   IUserRegisterFormValues,
-} from "./@types";
-import { useNavigate } from "react-router-dom";
-import { api } from "../services/api";
-import { toast } from "react-toastify";
+  TJwtDecoded,
+} from './@types';
 
 export const UserContext = createContext({} as IUserContextValues);
 
 export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState<IUserData>({} as IUserData);
 
   const navigate = useNavigate();
 
+  const retrieveUser = async () => {
+    try {
+      const userId = jwt_decode<TJwtDecoded>(
+        localStorage.getItem('@TOKEN')!
+      ).sub;
+      const response = await api.get<IUserData>(`/users/${userId}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('@TOKEN')}`,
+        },
+      });
+
+      setUser(response.data);
+    } catch (error) {
+      if (isAxiosError(error)) {
+        toast.error(error.message);
+      }
+    }
+  };
+
   const userLogin = async (formData: IUserLoginFormValues) => {
     try {
-      const response = await api.post("/session", formData);
+      const response = await api.post('/session', formData);
       const { token } = response.data;
 
-      localStorage.setItem("@TOKEN", token);
+      localStorage.setItem('@TOKEN', token);
       api.defaults.headers.common.Authorization = `Bearer ${token}`;
       //console.log(token);
       //console.log(response);
-
-      setUser(response.data);
-      navigate("/");
+      // setUser(response.data);
+      //await retrieveUser();
+      navigate('/');
       toast.success(`Bem Vindo!`);
     } catch (error) {
-      toast.error("Usuário ou senha inválido!");
+      toast.error('Usuário ou senha inválido!');
     }
   };
 
   const userRegister = async (formData: IUserRegisterFormValues) => {
     try {
       setLoading(true);
-      const response = await api.post("/users", formData);
-      console.log("testei funCao register");
-      setUser(response.data);
+      const response = await api.post('/users', formData);
+      console.log('testei funCao register');
+      // setUser(response.data);
       toast.success(`Usuario cadastrado!!`);
-      navigate("/");
+      navigate('/');
     } catch (error: any) {
       const errorMessage: string =
-        error.response?.data?.message ?? toast.error("Usuario não cadastrado!");
+        error.response?.data?.message ?? toast.error('Usuario não cadastrado!');
       toast.error(`${errorMessage}!`);
     } finally {
       setLoading(false);
@@ -54,9 +78,9 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   };
 
   const userLogout = () => {
-    setUser([]);
-    localStorage.removeItem("@TOKEN");
-    navigate("/");
+    setUser({} as IUserData);
+    localStorage.removeItem('@TOKEN');
+    navigate('/');
   };
 
   return (
@@ -69,6 +93,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
         setUser,
         userRegister,
         userLogout,
+        retrieveUser,
       }}
     >
       {children}

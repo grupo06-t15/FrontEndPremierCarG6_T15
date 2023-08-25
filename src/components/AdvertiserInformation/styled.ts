@@ -9,6 +9,10 @@ export const InfoContainer = styled.div`
   transform: translateY(-10rem);
   border-radius: 4px;
   padding: 2rem 1.5rem;
+
+  @media (min-width: 900px) {
+    width: 80%;
+  }
 `;
 
 export const AvatarContainer = styled.div`
@@ -59,7 +63,7 @@ export const NameContainer = styled.div`
 
 export const Description = styled.p`
   width: 100%;
-  height: 8.75rem;
+  height: 5rem;
   font-family: ${({ theme }) => theme.fonts.secondary};
   font-size: 1rem;
   white-space: normal;

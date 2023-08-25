@@ -31,10 +31,11 @@ export interface IUserContextValues {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   userLogin: (formData: IUserLoginFormValues) => Promise<void>;
-  user: never[];
-  setUser: (value: React.SetStateAction<never[]>) => void;
+  user: IUserData;
+  setUser: React.Dispatch<React.SetStateAction<IUserData>>;
   userRegister: (formData: IUserRegisterFormValues) => Promise<void>;
   userLogout: () => void;
+  retrieveUser: (token: string) => Promise<void>;
 }
 
 export interface ICarImages {
@@ -83,3 +84,10 @@ export interface IUserData {
   address: IAddress;
   announcements: IAnnounce[];
 }
+
+export type TJwtDecoded = {
+  userName?: string;
+  iat: number;
+  exp: number;
+  sub: string;
+};

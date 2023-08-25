@@ -1,29 +1,37 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import jwt_decode from "jwt-decode";
-import { Menu, MobileMenu, NavContainer, StyledNavbar } from "./style";
-import NavbarLogo from "../../assets/premiercarnavbar.png";
-import { StyledText } from "../../styles/typography";
-import { api } from "../../services/api";
-import { IUserRegisterFormValues } from "../../providers/@types";
+import jwt_decode from 'jwt-decode';
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import NavbarLogo from '../../assets/premiercarnavbar.png';
+import { IUserRegisterFormValues } from '../../providers/@types';
+import { UserContext } from '../../providers/UserProvider';
+import { api } from '../../services/api';
+import { StyledText } from '../../styles/typography';
+import { Menu, MobileMenu, NavContainer, StyledNavbar } from './style';
 
 export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [buttonText, setButtonText] = useState("=");
+  const [buttonText, setButtonText] = useState('=');
   const [userData, setUserData] = useState<IUserRegisterFormValues | null>();
+  const { setUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     async function loadUserData() {
-      const token = localStorage.getItem("@TOKEN");
+      const token = localStorage.getItem('@TOKEN');
 
       if (token) {
         const decoded: string = jwt_decode(token!);
 
-        const foundUser = await api.get(`/users/${decoded.sub!}`);
+        const foundUser = await api.get(`/users/${decoded.sub!}`, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         setUserData(foundUser.data);
+        setUser(foundUser.data);
       }
     }
     loadUserData();
@@ -33,16 +41,16 @@ export const Navbar = () => {
   const toggleMobileMenu = () => {
     setMobileMenu((open) => !open);
     if (!mobileMenu) {
-      setButtonText("x");
+      setButtonText('x');
     } else {
-      setButtonText("=");
+      setButtonText('=');
     }
   };
 
   return (
     <StyledNavbar>
       <NavContainer>
-        <img src={NavbarLogo} alt="Logo" onClick={() => navigate("/")} />
+        <img src={NavbarLogo} alt="Logo" onClick={() => navigate('/')} />
         {mobileMenu ? (
           <MobileMenu>
             {/* {userData && <h1>{userData.name}</h1>} */}

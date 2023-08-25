@@ -1,14 +1,18 @@
 import { styled } from "styled-components";
 
 export const InfoContainer = styled.div`
-    width: 90%;
-    max-height: 26.875rem;
-    display: flex;
-    flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.whiteFixed};
-    transform: translateY(-10rem);
-    border-radius: 4px;
-    padding: 2rem 1.5rem;
+  width: 90%;
+  max-height: 26.875rem;
+  display: flex;
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.whiteFixed};
+  transform: translateY(-10rem);
+  border-radius: 4px;
+  padding: 2rem 1.5rem;
+
+  @media (min-width: 900px) {
+    width: 80%;
+  }
 `;
 
 export const AvatarContainer = styled.div`
@@ -58,14 +62,14 @@ export const NameContainer = styled.div`
 `;
 
 export const Description = styled.p`
-    width: 100%;
-    height: 8.75rem;
-    font-family: ${({ theme }) => theme.fonts.secondary};
-    font-size: 1rem;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 1rem;
+  width: 100%;
+  height: 5rem;
+  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-size: 1rem;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1rem;
 `;
 
 export const CreateAnnounceBtn = styled.button`

@@ -1,10 +1,12 @@
 import { createContext, useState } from 'react';
 
+
 import { isAxiosError } from 'axios';
 import jwt_decode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { api } from '../services/api';
+
 import {
   IDefaultProvidersProps,
   IUserContextValues,
@@ -44,6 +46,26 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
     }
   };
 
+  const retrieveUser = async () => {
+    try {
+      const userId = jwt_decode<TJwtDecoded>(
+        localStorage.getItem("@TOKEN")!
+      ).sub;
+      const response = await api.get<IUserData>(`/users/${userId}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("@TOKEN")}`,
+        },
+      });
+
+      setUser(response.data);
+    } catch (error) {
+      if (isAxiosError(error)) {
+        toast.error(error.message);
+      }
+    }
+  };
+
   const userLogin = async (formData: IUserLoginFormValues) => {
     try {
       const response = await api.post('/session', formData);
@@ -55,7 +77,9 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
       //console.log(response);
       // setUser(response.data);
       //await retrieveUser();
+
       navigate('/');
+
       toast.success(`Bem Vindo!`);
     } catch (error) {
       toast.error('Usuário ou senha inválido!');
@@ -65,8 +89,10 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   const userRegister = async (formData: IUserRegisterFormValues) => {
     try {
       setLoading(true);
+
       const response = await api.post('/users', formData);
       console.log('testei funCao register');
+
       // setUser(response.data);
       toast.success(`Usuario cadastrado!!`);
       navigate('/');
@@ -81,8 +107,10 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
 
   const userLogout = () => {
     setUser({} as IUserData);
+
     localStorage.removeItem('@TOKEN');
     navigate('/');
+
   };
 
   return (

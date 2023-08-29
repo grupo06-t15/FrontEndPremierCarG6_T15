@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-import { Menu, MobileMenu, NavContainer, StyledNavbar } from "./style";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NavbarLogo from "../../assets/premiercarnavbar.png";
-import { StyledText } from "../../styles/typography";
-import { api } from "../../services/api";
 import { IUserRegisterFormValues } from "../../providers/@types";
+import { UserContext } from "../../providers/UserProvider";
+import { api } from "../../services/api";
+import { StyledText } from "../../styles/typography";
+import { Menu, MobileMenu, NavContainer, StyledNavbar } from "./style";
 
 export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [buttonText, setButtonText] = useState("=");
   const [userData, setUserData] = useState<IUserRegisterFormValues | null>();
+  const { setUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -21,9 +23,15 @@ export const Navbar = () => {
       if (token) {
         const decoded: string = jwt_decode(token!);
 
-        const foundUser = await api.get(`/users/${decoded.sub!}`);
+        const foundUser = await api.get(`/users/${decoded.sub!}`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         setUserData(foundUser.data);
+        setUser(foundUser.data);
       }
     }
     loadUserData();

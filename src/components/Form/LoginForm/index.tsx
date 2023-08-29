@@ -26,7 +26,7 @@ export const LoginForm = () => {
     const { userLogin } = useContext(UserContext);
 
     const submit: SubmitHandler<LoginData> = (formData) => {
-        console.log("teste");
+        //console.log("teste");
         userLogin(formData);
     };
 

@@ -27,22 +27,15 @@ export const NavContainer = styled.div`
         width: 240px;
     }
 
-  @media (max-width: 320px) {
-    img {
-      width: 100%;
-    }
-  }
-
-  @media (min-width: 769px) {
-
     button {
         position: relative;
         display: block;
-        height: 30px;
+        line-height: 30px;
         width: 30px;
         padding: 6px;
         border-radius: 6px;
-        font-size: 18px;
+        font-size: 22px;
+        background-color: ${({ theme }) => theme.colors.whiteFixed};
     }
 
     @media (min-width: 769px) {
@@ -90,24 +83,29 @@ export const MobileMenu = styled.ul`
     display: flex;
     flex-direction: column;
     margin-top: 0;
-    height: 100px;
-    width: 160px;
+    height: 184px;
+    width: 75%;
     padding: 1rem;
     gap: 1rem;
 
-    background-color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.whiteFixed};
     border-radius: 6px;
 
+    a > p {
+        margin-top: 20px;
+    }
+
     span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: ${({ theme }) => theme.colors.grey0};
         background-color: ${({ theme }) => theme.colors.grey10};
         border: solid 2px ${({ theme }) => theme.colors.grey4};
-
+        width: 90%;
         padding: 4px 8px;
-
         border-radius: 4px;
-
-        font-family: Inter;
+        margin-top: 30px;
         font-weight: 600;
         size: 12px;
 
@@ -116,7 +114,7 @@ export const MobileMenu = styled.ul`
 
     @media (max-width: 769px) {
         position: absolute;
-        margin-top: 3rem;
-        margin-left: 62%;
+        margin-top: 16.8rem;
+        margin-left: 20%;
     }
 `;

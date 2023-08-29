@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import { styled } from "styled-components";
 
 export const Announcement = styled.li`
     display: flex;
@@ -104,10 +104,8 @@ export const CarData = styled.div`
 
     div {
         display: flex;
-        //justify-content: space-between;
         align-items: center;
         padding: 0.2rem 0.6rem;
-        //background-color: ${({ theme }) => theme.colors.brand4};
         border-radius: 6px;
         gap: 0.4rem;
 

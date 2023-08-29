@@ -8,4 +8,4 @@ export const api = axios.create({
 export const carsApi = axios.create({
     baseURL: "https://kenzie-kars.herokuapp.com",
     timeout: 5000,
-})
+});

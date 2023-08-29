@@ -4,6 +4,13 @@ import { FooterContainer, StyledFooter } from "./style";
 import { StyledText } from "../../styles/typography";
 
 export const Footer = () => {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <StyledFooter>
             <FooterContainer>
@@ -15,6 +22,7 @@ export const Footer = () => {
                     className="FooterButton"
                     src={FooterButton}
                     alt="Footer Button"
+                    onClick={() => scrollToTop()}
                 />
             </FooterContainer>
         </StyledFooter>

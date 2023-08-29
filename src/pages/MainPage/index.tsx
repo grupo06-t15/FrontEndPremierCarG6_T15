@@ -29,13 +29,13 @@ export const MainPage = () => {
                 </Container>
 
                 <div className="divButtonMobile">
-                    <button>Filtros</button>
+                    <button className="filterButton"  >Filtros</button>
                     <p>
                         1 <span>de 2</span>{" "}
                     </p>
                     <button className="next">
                         Seguinte <RiArrowRightSLine />{" "}
-                    </button>
+                        </button>
                 </div>
             </Main>
             <Footer />

@@ -33,6 +33,14 @@ export const Main = styled.main`
         justify-content: center;
         font-weight: 700;
     }
+    .filterButton{
+    width: 279px;
+    height: 48px;
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.whiteFixed};
+    background-color: ${({ theme }) => theme.colors.brand2};
+    border-radius: 4px; 
+    }
 
     span {
         color: ${({ theme }) => theme.colors.grey4};

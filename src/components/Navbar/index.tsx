@@ -12,21 +12,28 @@ import { Menu, MobileMenu, NavContainer, StyledNavbar } from './style';
 export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [buttonText, setButtonText] = useState('=');
-  const [userData, setUserData] = useState<IUserRegisterFormValues | null>();
-  const { setUser } = useContext(UserContext);
+  //const [userData, setUserData] = useState<IUserRegisterFormValues | null>();
+  //const { setUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+/**  useEffect(() => {
     async function loadUserData() {
       const token = localStorage.getItem('@TOKEN');
-
       if (token) {
         const decoded: string = jwt_decode(token!);
+        const foundUser = await api.get(`/users/${decoded.sub!}`, {
+          headers: {
+            "Content-Type": "application/json",
+
+            if (token) {
+                const decoded: string = jwt_decode(token!);
+
 
         const foundUser = await api.get(`/users/${decoded.sub!}`, {
           headers: {
             'Content-Type': 'application/json',
+
             Authorization: `Bearer ${token}`,
           },
         });
@@ -37,7 +44,7 @@ export const Navbar = () => {
     }
     loadUserData();
   }, []);
-  // console.log(userData);
+  console.log(userData); **/
 
   const toggleMobileMenu = () => {
     setMobileMenu((open) => !open);

@@ -16,7 +16,9 @@ export const UserInfos = ({ userName }: IUserInfosProps) => {
   return (
     <UserInfosContainer>
       <Useravatar>{userName ? initialLetters(userName) : null}</Useravatar>
-      <UserName to={`/advertiser`}>{userName}</UserName>
+      <UserName to={`/advertiser/${userName?.replace(' ', '_')}`}>
+        {userName}
+      </UserName>
     </UserInfosContainer>
   );
 };

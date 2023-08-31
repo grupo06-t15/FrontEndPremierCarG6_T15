@@ -18,8 +18,8 @@ export const AdvertiseCard = ({ announce }: AdvertiseCardProps) => {
         <AnnounceCardContainer key={announce.id}>
             <AnnounceImageContainer>
                 <img
-                    src={announce.images[0].url}
-                    alt={announce.images[0].name}
+                    src={announce.images.find((image) => image.name === 'imagem 1')?.url}
+                    alt={announce.images.find((image) => image.name === 'imagem 1')?.name}
                 />
                 <AnnounceStatus
                     className={announce.published ? "ativo" : "inativo"}

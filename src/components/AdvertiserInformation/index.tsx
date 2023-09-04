@@ -9,6 +9,7 @@ import {
     InfoContainer,
     NameContainer,
 } from "./styled";
+import { AdvertiseCard } from '../AdvertiseCard';
 
 interface IAdvertiseInfoProps {
   user: IUserData;

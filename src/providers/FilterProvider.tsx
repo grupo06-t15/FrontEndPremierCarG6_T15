@@ -95,7 +95,7 @@ export const FilterProvider = ({ children }: IChildren) => {
 	const filteredModelCars = async (input: string) => {
 		const Response = await carsApi.get(`/cars?brand=${brand}`);
 		console.log(Response.data);
-		const carFilter = await Response.data.filter((car) =>
+		const carFilter = await Response.data.filter((car: any) =>
 			car.name.toLowerCase().includes(input.toLowerCase())
 		);
 

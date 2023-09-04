@@ -66,14 +66,21 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   const userRegister = async (formData: IUserRegisterFormValues) => {
     try {
       setLoading(true);
+      console.log("FRONT: ENTROU NO TRY");
 
-      const response = await api.post("/users", formData);
+      delete formData.confirmPassword;
+
+      await api.post("/users", formData);
+
       console.log("testei funCao register");
 
       // setUser(response.data);
       toast.success(`Usuario cadastrado!!`);
       navigate("/");
     } catch (error: any) {
+      console.log("FRONT: ENTROU NO CATCH");
+      console.log(error.response);
+
       const errorMessage: string =
         error.response?.data?.message ?? toast.error("Usuario não cadastrado!");
       toast.error(`${errorMessage}!`);

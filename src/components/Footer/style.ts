@@ -13,6 +13,7 @@ export const StyledFooter = styled.footer`
         display: flex;
         flex-direction: column;
         height: 310px;
+    
     }
 `;
 

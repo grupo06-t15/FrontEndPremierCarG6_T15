@@ -5,6 +5,7 @@ import { LeftMenu } from "../../components/LeftMenu";
 import { Navbar } from "../../components/Navbar";
 import { AnnouncementList, Container, FrontAds, Main, MainPageContainer } from "./style";
 
+
 export const MainPage = () => {
     return (
         <MainPageContainer>
@@ -29,7 +30,7 @@ export const MainPage = () => {
                 </Container>
 
                 <div className="divButtonMobile">
-                    <button className="filterButton"  >Filtros</button>
+                    <button className="filterButton" onClick={()=>{}} >Filtros</button>
                     <p>
                         1 <span>de 2</span>{" "}
                     </p>

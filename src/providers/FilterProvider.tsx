@@ -98,9 +98,13 @@ export const FilterProvider = ({ children }: IChildren) => {
     //Filtrar com marca e modelo da API da aplicação
     const filteredModelCars = async (input: string) => {
         const modelsResponse = await carsApi.get(
-            `/cars?brand=${brand}?models=${input}`
+           `/cars?brand=${brand}?models=${input}`
+           
         );
-        setModels(modelsResponse.data);
+        setModels(modelsResponse.data.name)
+        console.log(models);
+        
+
     };
 
     useEffect(() => {

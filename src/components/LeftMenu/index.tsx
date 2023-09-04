@@ -58,6 +58,8 @@ export const LeftMenu = () => {
                         // color="grey3"
                         key={uuidv4()}
                         onClick={() => filteredModelCars(name)}
+                      
+                        
                     >
                         {name.charAt(0).toUpperCase() + name.substr(1)}
                     </ModelButton>

@@ -8,6 +8,7 @@ import { api } from '../../services/api';
 import { StyledText } from '../../styles/typography';
 import { UserInfos } from '../UserInfos';
 import { Menu, MobileMenu, NavContainer, StyledNavbar } from './style';
+import { UserData } from '../AnnouncementCard/style';
 
 export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -77,7 +78,7 @@ export const Navbar = () => {
             </MobileMenu>
           ) : (
             <MobileMenu>
-              <UserInfos userName={userData?.name} />
+              <UserInfos userName={UserData?.name} />
             </MobileMenu>
           )
         ) : !localStorage.getItem('@TOKEN') ? (
@@ -98,7 +99,7 @@ export const Navbar = () => {
           </Menu>
         ) : (
           <Menu>
-            <UserInfos userName={userData?.name} />
+            <UserInfos userName={UserData?.name} />
           </Menu>
         )}
         <button type="button" onClick={toggleMobileMenu}>

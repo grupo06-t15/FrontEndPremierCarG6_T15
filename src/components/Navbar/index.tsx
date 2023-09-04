@@ -8,6 +8,7 @@ import { api } from '../../services/api';
 import { StyledText } from '../../styles/typography';
 import { UserInfos } from '../UserInfos';
 import { Menu, MobileMenu, NavContainer, StyledNavbar } from './style';
+import { FiLogOut } from 'react-icons/fi';
 
 export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -18,15 +19,15 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function loadUserData() {
-      const token = localStorage.getItem('@TOKEN');
+    const token = localStorage.getItem('@TOKEN');
 
+    async function loadUserData() {
       if (token) {
         const decoded: string = jwt_decode(token!);
-
         const foundUser = await api.get(`/users/${decoded.sub!}`, {
           headers: {
             'Content-Type': 'application/json',
+
             Authorization: `Bearer ${token}`,
           },
         });
@@ -37,7 +38,6 @@ export const Navbar = () => {
     }
     loadUserData();
   }, []);
-  // console.log(userData);
 
   const toggleMobileMenu = () => {
     setMobileMenu((open) => !open);
@@ -47,6 +47,13 @@ export const Navbar = () => {
       setButtonText('=');
     }
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem('@TOKEN')
+
+    setUserData(null)
+    navigate('/')
+  }
 
   return (
     <StyledNavbar>
@@ -71,6 +78,9 @@ export const Navbar = () => {
           ) : (
             <MobileMenu>
               <UserInfos userName={userData?.name} />
+              <button onClick={handleLogout}>
+                <FiLogOut />
+              </button>
             </MobileMenu>
           )
         ) : !localStorage.getItem('@TOKEN') ? (
@@ -92,6 +102,9 @@ export const Navbar = () => {
         ) : (
           <Menu>
             <UserInfos userName={userData?.name} />
+            <button onClick={handleLogout}>
+              <FiLogOut />
+            </button>
           </Menu>
         )}
         <button type="button" onClick={toggleMobileMenu}>

@@ -237,7 +237,7 @@ export const CreateAnnouceModal = () => {
                     <DeleteAnnounceBtn disabled={true} type="button">
                         Excluir anúncio
                     </DeleteAnnounceBtn>
-                    <SaveAnnounceBtn disabled={true} type="submit">
+                    <SaveAnnounceBtn  type="submit">
                         Salvar alterações
                     </SaveAnnounceBtn>
                 </ModalFormImputContainer>

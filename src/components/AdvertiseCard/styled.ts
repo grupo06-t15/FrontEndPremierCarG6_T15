@@ -19,6 +19,7 @@ export const AnnounceImageContainer = styled.div`
     align-items: center;
     background-color: ${({ theme }) => theme.colors.grey7};
     position: relative;
+    border: 1px solid ${({ theme }) => theme.colors.whiteFixed};
 
     img {
         width: 100%;
@@ -26,6 +27,10 @@ export const AnnounceImageContainer = styled.div`
         min-width: 100%;
         max-height: 100%;
         min-height: 100%;
+    }
+
+    &:hover {
+        border: 1px solid ${({ theme }) => theme.colors.brand1};
     }
 `;
 

@@ -74,6 +74,10 @@ export const Menu = styled.ul`
     color: ${({ theme }) => theme.colors.grey2};
   }
 
+  button {
+    display: flex;
+  }
+
   @media (max-width: 769px) {
     display: none;
   }
@@ -110,6 +114,11 @@ export const MobileMenu = styled.ul`
     size: 12px;
 
     color: ${({ theme }) => theme.colors.grey2};
+  }
+
+  button {
+    position: absolute;
+    left: 85%;
   }
 
   @media (max-width: 769px) {

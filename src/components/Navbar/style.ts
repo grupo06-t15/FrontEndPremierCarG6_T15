@@ -74,6 +74,10 @@ export const Menu = styled.ul`
     color: ${({ theme }) => theme.colors.grey2};
   }
 
+  button {
+    display: flex;
+  }
+
   @media (max-width: 769px) {
     display: none;
   }

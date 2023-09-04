@@ -76,7 +76,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
 
       // setUser(response.data);
       toast.success(`Usuario cadastrado!!`);
-      navigate("/");
+      navigate("/login");
     } catch (error: any) {
       console.log("FRONT: ENTROU NO CATCH");
       console.log(error.response);

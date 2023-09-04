@@ -94,7 +94,6 @@ export const FilterProvider = ({ children }: IChildren) => {
 	//Filtrar com marca e modelo da API da aplicação
 	const filteredModelCars = async (input: string) => {
 		const Response = await carsApi.get(`/cars?brand=${brand}`);
-		console.log(Response.data);
 		const carFilter = await Response.data.filter((car: any) =>
 			car.name.toLowerCase().includes(input.toLowerCase())
 		);

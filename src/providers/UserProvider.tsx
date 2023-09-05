@@ -1,7 +1,6 @@
 import { createContext, useState } from "react";
 
 import { isAxiosError } from "axios";
-import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
@@ -12,7 +11,6 @@ import {
   IUserData,
   IUserLoginFormValues,
   IUserRegisterFormValues,
-  TJwtDecoded,
 } from "./@types";
 
 export const UserContext = createContext({} as IUserContextValues);
@@ -20,14 +18,13 @@ export const UserContext = createContext({} as IUserContextValues);
 export const UserProvider = ({ children }: IDefaultProvidersProps) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<IUserData>({} as IUserData);
+  const [currentUser, setCurrentUser] = useState<IUserData>({} as IUserData);
 
   const navigate = useNavigate();
 
-  const retrieveUser = async () => {
+  const retrieveUser = async (userId: string) => {
     try {
-      const userId = jwt_decode<TJwtDecoded>(
-        localStorage.getItem("@TOKEN")!
-      ).sub;
+      localStorage.setItem("@PUBLIC_USER_ID", userId);
       const response = await api.get<IUserData>(`/users/${userId}`, {
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +32,7 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
         },
       });
 
-      setUser(response.data);
+      setCurrentUser(response.data);
     } catch (error) {
       if (isAxiosError(error)) {
         toast.error(error.message);
@@ -107,6 +104,8 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
         userRegister,
         userLogout,
         retrieveUser,
+        currentUser,
+        setCurrentUser,
       }}
     >
       {children}

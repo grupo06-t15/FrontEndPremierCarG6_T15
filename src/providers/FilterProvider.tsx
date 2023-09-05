@@ -90,6 +90,8 @@ export const FilterProvider = ({ children }: IChildren) => {
     const filteredBrandCars = async (input: string) => {
         const brandResponse = await carsApi.get(`/cars?brand=${input}`);
         setBrand(input);
+       console.log(brandResponse)
+
         setModels(brandResponse.data);
     };
 
@@ -98,7 +100,8 @@ export const FilterProvider = ({ children }: IChildren) => {
         const modelsResponse = await carsApi.get(
             `/cars?brand=${brand}?models=${input}`
         );
-        setModels(modelsResponse.data);
+  
+       setModels(modelsResponse.data);
     };
 
     useEffect(() => {

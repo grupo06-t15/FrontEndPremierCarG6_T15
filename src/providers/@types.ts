@@ -35,7 +35,9 @@ export interface IUserContextValues {
   setUser: React.Dispatch<React.SetStateAction<IUserData>>;
   userRegister: (formData: IUserRegisterFormValues) => Promise<void>;
   userLogout: () => void;
-  retrieveUser: (token: string) => Promise<void>;
+  retrieveUser: (userId: string) => Promise<void>;
+  currentUser: IUserData;
+  setCurrentUser: React.Dispatch<React.SetStateAction<IUserData>>;
 }
 
 export interface ICarImages {

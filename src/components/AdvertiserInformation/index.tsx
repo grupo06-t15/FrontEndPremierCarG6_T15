@@ -3,18 +3,22 @@ import { IUserData } from '../../providers/@types';
 import { ModalContext } from '../../providers/ModalProvider';
 
 import {
-    AvatarContainer,
-    CreateAnnounceBtn,
-    Description,
-    InfoContainer,
-    NameContainer,
-} from "./styled";
+  AvatarContainer,
+  CreateAnnounceBtn,
+  Description,
+  InfoContainer,
+  NameContainer,
+} from './styled';
 
 interface IAdvertiseInfoProps {
   user: IUserData;
+  pageType: string;
 }
 
-export const AdvertiserInformation = ({ user }: IAdvertiseInfoProps) => {
+export const AdvertiserInformation = ({
+  user,
+  pageType,
+}: IAdvertiseInfoProps) => {
   const { setModalType } = useContext(ModalContext);
   return (
     <InfoContainer>
@@ -28,12 +32,11 @@ export const AdvertiserInformation = ({ user }: IAdvertiseInfoProps) => {
         <span>{user.accountType}</span>
       </NameContainer>
       <Description>{user.description}</Description>
-      {user.accountType === 'anunciante' && (
+      {user.accountType === 'anunciante' && pageType === 'private' && (
         <CreateAnnounceBtn onClick={(e) => setModalType('createAnnounce')}>
           Criar anuncio
         </CreateAnnounceBtn>
       )}
     </InfoContainer>
   );
-
 };

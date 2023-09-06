@@ -18,7 +18,7 @@ export const AnnouncementCard = () => {
 	const [isForSale, setIsForSale] = useState(false);
 
 	const { carsAPI } = useContext(FilterContext);
-	const { user, retrieveUser } = useContext(UserContext);
+	const { retrieveUser } = useContext(UserContext);
 
 	return (
 		<>
@@ -49,7 +49,7 @@ export const AnnouncementCard = () => {
 					</StyledText>
 					<UserData>
 						<StyledLink
-							to="/advertiser"
+							to={`/advertiser/${car.user.name.replace(" ", "-")}}`}
 							onClick={() => retrieveUser(car.user.id)}
 						>
 							<StyledText tag="span" type="Body-2-500" color="brand1">

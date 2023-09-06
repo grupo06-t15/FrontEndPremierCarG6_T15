@@ -48,7 +48,10 @@ export const AnnouncementCard = () => {
 						{car.model.charAt(0).toUpperCase() + car.model.substr(1)}
 					</StyledText>
 					<UserData>
-						<StyledLink to="/advertiser" onClick={() => retrieveUser(user.id)}>
+						<StyledLink
+							to="/advertiser"
+							onClick={() => retrieveUser(car.user.id)}
+						>
 							<StyledText tag="span" type="Body-2-500" color="brand1">
 								{((fullname) =>
 									fullname

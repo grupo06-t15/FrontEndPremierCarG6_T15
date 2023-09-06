@@ -39,4 +39,14 @@ Note: When running the command, you'll see the link where the application is run
 You will be directed to the application page.
 - Alternatively, you can use your choice of HTTP client, such as Insomnia or Postman, to interact with the backend.
 
+ # Features:
+
+- User registration.
+- Login functionality.
+- The possibility to put a vehicle up for sale.
+- Viewing and browsing of listed vehicles.
+- Ability to delete or update an announcement.
+- purchase a vehicle.
+- delete the account.
+
 

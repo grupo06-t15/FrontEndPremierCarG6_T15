@@ -47,10 +47,6 @@ export const UserProvider = ({ children }: IDefaultProvidersProps) => {
 
       localStorage.setItem("@TOKEN", token);
       api.defaults.headers.common.Authorization = `Bearer ${token}`;
-      //console.log(token);
-      //console.log(response);
-      // setUser(response.data);
-      //await retrieveUser();
 
       navigate("/");
 

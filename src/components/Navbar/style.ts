@@ -116,6 +116,11 @@ export const MobileMenu = styled.ul`
     color: ${({ theme }) => theme.colors.grey2};
   }
 
+  button {
+    position: absolute;
+    left: 85%;
+  }
+
   @media (max-width: 769px) {
     position: absolute;
     margin-top: 16.8rem;

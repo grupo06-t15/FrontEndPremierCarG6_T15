@@ -90,7 +90,6 @@ export const FilterProvider = ({ children }: IChildren) => {
 			fuels.map((nameFuel) => {
 				if (nameFuel == "flex") {
 					typeFuels.push("Flex");
-          
 				} else if (nameFuel == "hibrido") {
 					typeFuels.push("Híbrido");
 				} else if (nameFuel == "elétrico") {
@@ -112,11 +111,7 @@ export const FilterProvider = ({ children }: IChildren) => {
 			car.brand.toLowerCase().includes(input.toLowerCase())
 		);
 
-
-		setModels(carFilter);
-	};
 		const listModels: string[] = [];
-
 
 		modelsFilter.map((car) => listModels.push(car.model));
 

@@ -68,7 +68,7 @@ export const AdvertiserPage = () => {
 			{modalType == "editeAnnounce" && (
 				<ModalContainer>
 					<EditAnnounceModal />
-				</ModalContainer>
+https://docs.google.com/spreadsheets/d/1IlETIVg1vD8i7LV7N6Sa9wLa6_MjocNYyQE1pin3ZDs/edit?usp=drive_link				</ModalContainer>
 			)}
 		</MainContainer>
 	);

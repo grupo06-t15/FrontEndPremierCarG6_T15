@@ -7,7 +7,7 @@ The PremierCar E-commerce Platform is an advanced solution that simplifies the p
 - **Car Catalog:** Explore a wide range of new and used cars from various brands and models. View comprehensive details, including technical specifications, prices, and high-quality images.
 
 - **Advanced Search:** Utilize advanced filters to refine your search based on criteria such as brand, model, year, body type, mileage, price, and more.
-- 
+ 
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

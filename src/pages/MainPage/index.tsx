@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { AnnouncementCard } from "../../components/AnnouncementCard";
 import { Footer } from "../../components/Footer";
 import { LeftMenu } from "../../components/LeftMenu";
@@ -9,8 +10,12 @@ import {
 	Main,
 	MainPageContainer,
 } from "./style";
+import { FilterContext } from "../../providers/FilterProvider";
+import { StyledText } from "../../styles/typography";
 
 export const MainPage = () => {
+	const { carsAPI } = useContext(FilterContext);
+
 	return (
 		<MainPageContainer>
 			<Navbar />
@@ -29,7 +34,13 @@ export const MainPage = () => {
 				<Container>
 					<LeftMenu />
 					<AnnouncementList>
-						<AnnouncementCard />
+						{carsAPI.length < 1 ? (
+							<StyledText tag="p" type="Heading-5-600" color="brand1">
+								Não existe nenhum anúncio disponível
+							</StyledText>
+						) : (
+							<AnnouncementCard />
+						)}
 					</AnnouncementList>
 				</Container>
 

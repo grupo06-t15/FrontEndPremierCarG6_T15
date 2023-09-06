@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { carsApi } from "../services/api";
+import { api, carsApi } from "../services/api";
+import { IAnnounce } from "./@types";
 
 interface IChildren {
 	children: React.ReactNode;
@@ -22,12 +23,18 @@ export interface IFilterContextValues {
 	filteredBrandCars: (input: string) => void;
 	filteredModelCars: (input: string) => void;
 	showCars: () => Promise<void>;
+
+	carsAPI: IAnnounce[];
+	setCarsAPI: React.Dispatch<React.SetStateAction<IAnnounce[]>>;
+	modelsAPI: IAnnounce[];
+	setModelsAPI: React.Dispatch<React.SetStateAction<IAnnounce[]>>;
 }
 
 interface IModels {
 	id: string;
 	name: string;
 	brand: string;
+	model: string;
 	year: string;
 	fuel: number;
 	value: number;
@@ -42,8 +49,21 @@ export const FilterProvider = ({ children }: IChildren) => {
 	const [names, setNames] = useState<string[]>([]);
 	const [years, setYears] = useState<string[]>([]);
 	const [fuels, setFuels] = useState<string[]>([]);
-
 	const [brand, setBrand] = useState<string>("");
+
+	const [carsAPI, setCarsAPI] = useState<IAnnounce[]>([]);
+	const [modelsAPI, setModelsAPI] = useState<IAnnounce[]>([]);
+	const [namesAPI, setNamesAPI] = useState<string[]>([]);
+	const [yearsAPI, setYearsAPI] = useState<string[]>([]);
+	const [fuelsAPI, setFuelsAPI] = useState<string[]>([]);
+	const [brandAPI, setBrandAPI] = useState<string>("");
+
+	useEffect(() => {
+		(async () => {
+			await showCars();
+			await showCarsAPI();
+		})();
+	}, []);
 
 	const showCars = async () => {
 		try {
@@ -85,6 +105,45 @@ export const FilterProvider = ({ children }: IChildren) => {
 		}
 	};
 
+	const showCarsAPI = async () => {
+		try {
+			setLoading(false);
+
+			const response = await api.get("/announcements");
+			setCarsAPI(response.data);
+
+			const names: string[] = Array.from(
+				new Set(
+					response.data.map((model: IModels) => model.model.split(" ")[0])
+				)
+			);
+			setNamesAPI(names);
+
+			const years: string[] = Array.from(
+				new Set(response.data.map((model: IModels) => model.year))
+			);
+			setYearsAPI(years);
+
+			const fuel = Array.from(
+				new Set(response.data.map((model: IModels) => model.fuel))
+			);
+
+			const nameFuels: string[] = [];
+			fuel.map((nameFuel) => {
+				if (nameFuel == "flex") {
+					nameFuels.push("Flex");
+				} else if (nameFuel == "hibrido") {
+					nameFuels.push("Híbrido");
+				} else if (nameFuel == "elétrico") {
+					nameFuels.push("Elétrico");
+				}
+			});
+			setFuelsAPI(nameFuels);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	const filteredBrandCars = async (input: string) => {
 		const brandResponse = await carsApi.get(`/cars?brand=${input}`);
 		setBrand(input);
@@ -101,12 +160,6 @@ export const FilterProvider = ({ children }: IChildren) => {
 
 		setModels(carFilter);
 	};
-
-	useEffect(() => {
-		(async () => {
-			await showCars();
-		})();
-	}, []);
 
 	const filterModels = async (input: string) => {
 		const filterResponse = await carsApi.get(`/cars?brand=${input}`);
@@ -160,6 +213,8 @@ export const FilterProvider = ({ children }: IChildren) => {
 				filterModels,
 				filteredBrandCars,
 				filteredModelCars,
+				carsAPI,
+				setCarsAPI,
 			}}
 		>
 			{children}

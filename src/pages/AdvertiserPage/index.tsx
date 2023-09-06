@@ -33,6 +33,7 @@ export const AdvertiserPage = () => {
 		<MainContainer>
 			<Navbar />
 			<PurpleBox />
+
 			<AdvertiserInformation
 				user={definePageType() === "private" ? user : currentUser}
 				pageType={definePageType()}
@@ -45,6 +46,7 @@ export const AdvertiserPage = () => {
 								key={announce.id}
 								pageType={definePageType()}
 							/>
+							// eslint-disable-next-line no-mixed-spaces-and-tabs
 					  ))
 					: currentUser.announcements
 							?.filter((announce) => announce.published)

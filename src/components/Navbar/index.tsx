@@ -101,7 +101,7 @@ export const Navbar = () => {
           </Menu>
         ) : (
           <Menu>
-            <UserInfos userName={UserData?.name} />
+            <UserInfos userName={userData?.name} />
           </Menu>
         )}
         <button type="button" onClick={toggleMobileMenu}>

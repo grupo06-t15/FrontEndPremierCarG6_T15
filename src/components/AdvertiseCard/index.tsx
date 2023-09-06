@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { IAnnounce } from "../../providers/@types";
 import {
 	AnnouceDescription,
@@ -8,6 +9,7 @@ import {
 	AnnounceTitle,
 	PriceContainer,
 } from "./styled";
+import { ModalContext } from "../../providers/ModalProvider";
 
 interface AdvertiseCardProps {
 	announce: IAnnounce;
@@ -15,19 +17,22 @@ interface AdvertiseCardProps {
 }
 
 export const AdvertiseCard = ({ announce, pageType }: AdvertiseCardProps) => {
+	const {setModalType} = useContext(ModalContext)
+
+	const handlerEditModal = () => {
+		setModalType("editeAnnounce")
+		localStorage.setItem('@CURRENTITEM', announce.id)
+	}
+	
 	return (
 		<AnnounceCardContainer key={announce.id}>
 			<AnnounceImageContainer>
 				<img
 					src={
-						announce.images.find(
-							(image) => image.name.charAt(image.name.length - 1) === "1"
-						)?.url
+						announce.images[0].url
 					}
 					alt={
-						announce.images.find(
-							(image) => image.name.charAt(image.name.length - 1) === "1"
-						)?.name
+						announce.images[0].name
 					}
 				/>
 				{pageType === "private" && (
@@ -49,7 +54,7 @@ export const AdvertiseCard = ({ announce, pageType }: AdvertiseCardProps) => {
 			</PriceContainer>
 			{pageType === "private" && (
 				<AnnounceBtnContainer>
-					<button>Editar</button>
+					<button onClick={handlerEditModal }>Editar</button>
 					<button>Ver detalhes</button>
 				</AnnounceBtnContainer>
 			)}

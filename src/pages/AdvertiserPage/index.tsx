@@ -9,6 +9,7 @@ import { Navbar } from "../../components/Navbar";
 import { ModalContext } from "../../providers/ModalProvider";
 import { UserContext } from "../../providers/UserProvider";
 import { AnnounceList, MainContainer, PurpleBox } from "./styled";
+import { EditAnnounceModal } from "../../components/EditAnnounceModal";
 
 export const AdvertiserPage = () => {
 	const { modalType } = useContext(ModalContext);
@@ -62,6 +63,11 @@ export const AdvertiserPage = () => {
 			{modalType == "createAnnounce" && (
 				<ModalContainer>
 					<CreateAnnouceModal />
+				</ModalContainer>
+			)}
+			{modalType == "editeAnnounce" && (
+				<ModalContainer>
+					<EditAnnounceModal />
 				</ModalContainer>
 			)}
 		</MainContainer>

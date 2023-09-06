@@ -48,5 +48,7 @@ You will be directed to the application page.
 - Ability to delete or update an announcement.
 - purchase a vehicle.
 - delete the account.
+- comments on the plataform ads.
+- Edit and delete the comments.
 
 

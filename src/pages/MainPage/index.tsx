@@ -1,4 +1,3 @@
-import { RiArrowRightSLine } from "react-icons/ri";
 import { AnnouncementCard } from "../../components/AnnouncementCard";
 import { Footer } from "../../components/Footer";
 import { LeftMenu } from "../../components/LeftMenu";

@@ -1,4 +1,4 @@
-
+# FrontEndPremierCarG6_T15
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -26,6 +26,18 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+   # Features:
+
+- User registration.
+- Login functionality.
+- The possibility to put a vehicle up for sale.
+- Viewing and browsing of listed vehicles.
+- Ability to delete or update an announcement.
+- purchase a vehicle.
+- delete the account.
+- comments on the plataform ads.
+- Edit and delete the comments.
  
 
 

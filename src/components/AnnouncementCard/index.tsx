@@ -51,10 +51,10 @@ export const AnnouncementCard = () => {
                     </StyledText>
                     <UserData>
                         <StyledText tag="span" type="Body-2-500" color="brand1">
-                            EK
+                            Us
                         </StyledText>
                         <StyledText tag="p" type="Body-2-500" color="grey2">
-                            Eduardo Kucek
+                            Usuario 
                         </StyledText>
                     </UserData>
                     <CarData>

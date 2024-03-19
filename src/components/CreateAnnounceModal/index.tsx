@@ -93,7 +93,7 @@ export const CreateAnnouceModal = () => {
         <ModalContainer>
             <ModalHeader>
                 <ModalTitle>Criar anúncio</ModalTitle>
-                <CloseModalBtn onClick={(e) => setModalType("")}>
+                <CloseModalBtn onClick={() => setModalType("")}>
                     X
                 </CloseModalBtn>
             </ModalHeader>
@@ -229,7 +229,7 @@ export const CreateAnnouceModal = () => {
                 {renderImages()}
                 <AddImageBtn
                     type="button"
-                    onClick={(e) => setImagesCount(imagesCount + 1)}
+                    onClick={() => setImagesCount(imagesCount + 1)}
                 >
                     Adicionar campo para imagem da galeria
                 </AddImageBtn>

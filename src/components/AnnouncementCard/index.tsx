@@ -5,8 +5,8 @@ import { FilterContext } from "../../providers/FilterProvider";
 import { v4 as uuidv4 } from "uuid";
 
 export const AnnouncementCard = () => {
-    const [isActive, setIsActive] = useState(true);
-    const [isForSale, setIsForSale] = useState(false);
+    const [isActive] = useState(true);
+    const [isForSale] = useState(false);
     //Pelo Figma, os veículos podem estar ativos ou inativos, e em promoção. Assim, foi criado o isActive e isForSale para aplicar conforme a regra de negócio
 
     const { models } = useContext(FilterContext);

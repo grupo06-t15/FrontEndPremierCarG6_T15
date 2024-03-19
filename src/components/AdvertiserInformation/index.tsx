@@ -9,7 +9,6 @@ import {
     InfoContainer,
     NameContainer,
 } from "./styled";
-import { AdvertiseCard } from '../AdvertiseCard';
 
 interface IAdvertiseInfoProps {
   user: IUserData;
@@ -30,7 +29,7 @@ export const AdvertiserInformation = ({ user }: IAdvertiseInfoProps) => {
       </NameContainer>
       <Description>{user.description}</Description>
       {user.accountType === 'anunciante' && (
-        <CreateAnnounceBtn onClick={(e) => setModalType('createAnnounce')}>
+        <CreateAnnounceBtn onClick={() => setModalType('createAnnounce')}>
           Criar anuncio
         </CreateAnnounceBtn>
       )}
